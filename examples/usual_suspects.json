@@ -1,0 +1,35 @@
+{
+    "graph": {
+        "id": "default",
+        "type": "",
+        "label": "Usual Suspects",
+        "nodes": [
+            {
+                "id": "Roger Kint",
+                "label": "Roger Kint"
+                "metadata": {
+                    "nickname": "Verbal",
+                    "actor": "Kevin Spacey"
+                }
+            },
+            {
+                "id": "Keyser Söze",
+                "label": "Keyser Söze"
+                "metadata": {
+                    "actor": "Kevin Spacey"
+                }
+            }
+        ],
+        "edges": [
+            {
+                "source": "Roger Kint",
+                "target": "Keyser Söze",
+                "rel": "is"
+            }
+        ]
+        "metadata": {
+            "release year": "1995"
+        }
+    }
+}
+# vim: syntax=javascript ts=4 sts=4 sw=4

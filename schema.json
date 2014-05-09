@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "graph": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+                "label": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": ["object", "null"]
+                },
+                "nodes": {
+                    "type": ["array", "null"],
+                    "items": [
+                        {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                }
+                                "label": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "type": ["object", "null"]
+                                },
+                            },
+                            "required": ["id"]
+                        }
+                    ]
+                },
+                "edges": {
+                    "type": ["array", "null"],
+                    "items": [
+                        {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "source": {
+                                    "type": "string"
+                                },
+                                "target": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "type": ["object", "null"]
+                                },
+                            },
+                            "required": ["source", "target"]
+                        }
+                    ]
+                }
+            }
+        },
+        "required": ["id"]
+    },
+    "required": ["graph"]
+}
