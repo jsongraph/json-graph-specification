@@ -75,10 +75,10 @@ A graph object represents a single conceptual graph.
 - A `nodes` property provides the nodes in the graph.  Its value is an array of `node object`_.
 - An `edges` property provides the edges in the graph.  Its value is an array of `edge object`_.
 
-.. _example:
+.. _examples:
 
-Example
--------
+Examples
+--------
 
 .. _minimum empty:
 
