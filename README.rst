@@ -80,6 +80,8 @@ A graph object represents a single conceptual graph.
 Example
 -------
 
+.. _minimum empty:
+
 **minimum (empty graph)**
 
 .. code-block:: json
@@ -89,6 +91,8 @@ Example
             "id": "default"
         }
     }
+
+.. _minimum nodes:
 
 **minimum (nodes only)**
 
@@ -107,6 +111,8 @@ Example
             ]
         }
     }
+
+.. _minimum nodes edges:
 
 **minimum (nodes and edges)**
 
@@ -131,6 +137,8 @@ Example
             ]
         }
     }
+
+.. _complete:
 
 **complete**
 
