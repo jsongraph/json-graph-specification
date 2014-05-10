@@ -56,8 +56,8 @@ An edge object represents an edge in a graph.
 **edge properties**
 
 - Includes all `Common Properties`_
-- A `source` property provides the `id` value of the source `node object_`.  Its value is defined as a *JSON string*.
-- A `target` property provides the `id` value of the target `node object_`.  Its value is defined as a *JSON string*.
+- A `source` property provides the `id` value of the source `node object`_.  Its value is defined as a *JSON string*.
+- A `target` property provides the `id` value of the target `node object`_.  Its value is defined as a *JSON string*.
 - A `type` property provides semantic meaning to the edge (e.g. edge relationship).  Its value is defined as a *JSON string*.
 
 .. _graph object:
@@ -70,8 +70,8 @@ A graph object represents a single conceptual graph.
 
 - Includes all `Common Properties`_
 - A `type` property that provides the type of data represented in this graph.  Its value is a *JSON string*.
-- A `nodes` property provides the nodes in the graph.  Its value is an array of `node object_`.
-- An `edges` property provides the edges in the graph.  Its value is an array of `edge object_`.
+- A `nodes` property provides the nodes in the graph.  Its value is an array of `node object`_.
+- An `edges` property provides the edges in the graph.  Its value is an array of `edge object`_.
 
 Example
 -------
