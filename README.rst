@@ -10,7 +10,7 @@ Design principles
 - Property names should not be excessively long.
 - Property names should be plural when value is an array.
 - Properties that allow a ``null`` value can be omitted.
-- Define JSON schema for content validation purposes.
+- Define a `JSON graph schema`_ for content validation purposes.
 
 .. _properties:
 
@@ -119,3 +119,19 @@ Example
         }
     }
 
+Schema
+------
+
+.. _schema:
+
+The `JSON graph schema`_ (version 3) is provided for the json graph format.
+
+.. _links:
+
+Links
+-----
+
+- `JSON schema`_
+
+.. _JSON graph schema: https://github.com/jsongraph/json-graph-specification/blob/master/schema.json
+.. _JSON schema: http://json-schema.org
