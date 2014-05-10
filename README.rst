@@ -75,49 +75,105 @@ A graph object represents a single conceptual graph.
 - A `nodes` property provides the nodes in the graph.  Its value is an array of `node object`_.
 - An `edges` property provides the edges in the graph.  Its value is an array of `edge object`_.
 
+.. _example:
+
 Example
 -------
 
-.. _example:
+**minimum (empty graph)**
+
+.. code-block:: json
+
+    {
+        "graph": {
+            "id": "default"
+        }
+    }
+
+**minimum (nodes only)**
 
 .. code-block:: json
 
     {
         "graph": {
             "id": "default",
-            "type": "movie characters",
-            "label": "Usual Suspects",
             "nodes": [
                 {
-                    "id": "Roger Kint",
-                    "label": "Roger Kint",
-                    "type": "character",
+                    "id": "A",
+                },
+                {
+                    "id": "B",
+                }
+            ]
+        }
+    }
+
+**minimum (nodes and edges)**
+
+.. code-block:: json
+
+    {
+        "graph": {
+            "id": "default",
+            "nodes": [
+                {
+                    "id": "A",
+                },
+                {
+                    "id": "B",
+                }
+            ],
+            "edges": [
+                {
+                    "source": "A",
+                    "target": "B"
+                }
+            ]
+        }
+    }
+
+**complete**
+
+.. code-block:: json
+
+    {
+        "graph": {
+            "id": "default",
+            "type": "social",
+            "label": "Social graph",
+            "nodes": [
+                {
+                    "id": "0",
+                    "type": "person",
+                    "label": "Bob Smith",
                     "metadata": {
-                        "nickname": "Verbal",
-                        "actor": "Kevin Spacey"
+                        "nickname": "Bobby"
                     }
                 },
                 {
-                    "id": "Keyser Söze",
-                    "label": "Keyser Söze",
-                    "type": "character",
+                    "id": "1",
+                    "type": "person",
+                    "label": "Patty Smith"
                     "metadata": {
-                        "actor": "Kevin Spacey"
+                        "nickname": "Pat"
                     }
                 }
             ],
             "edges": [
                 {
-                    "source": "Roger Kint",
-                    "target": "Keyser Söze",
-                    "type": "is"
+                    "source": "0",
+                    "target": "1",
+                    "type": "married to",
+                    "label": "- Married to -",
+                    "metadata": {
+                        "number of years": 6
+                    }
                 }
             ]
-            "metadata": {
-                "release year": "1995"
-            }
         }
     }
+
+More `real world examples`_.
 
 Schema
 ------
@@ -135,3 +191,4 @@ Links
 
 .. _JSON graph schema: https://github.com/jsongraph/json-graph-specification/blob/master/schema.json
 .. _JSON schema: http://json-schema.org
+.. _real world examples: https://github.com/jsongraph/json-graph-specification/tree/master/examples
