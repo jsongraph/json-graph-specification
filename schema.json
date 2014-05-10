@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-03/schema#",
+    "$schema": "http://json-schema.org/draft-03/schema#",
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -9,7 +9,7 @@
             "properties": {
                 "id": {
                     "type": "string"
-                }
+                },
                 "label": {
                     "type": "string"
                 },
@@ -28,7 +28,7 @@
                             "properties": {
                                 "id": {
                                     "type": "string"
-                                }
+                                },
                                 "label": {
                                     "type": "string"
                                 },
@@ -37,7 +37,7 @@
                                 },
                                 "metadata": {
                                     "type": ["object", "null"]
-                                },
+                                }
                             },
                             "required": ["id"]
                         }
@@ -61,7 +61,7 @@
                                 },
                                 "metadata": {
                                     "type": ["object", "null"]
-                                },
+                                }
                             },
                             "required": ["source", "target"]
                         }
