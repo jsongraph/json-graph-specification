@@ -72,6 +72,7 @@ A graph object represents a single conceptual graph.
 **graph properties**
 
 - Includes all `Common Properties`_
+- A `directed` property provides the graph mode (e.g. directed or undirected).  Its value is *JSON true* for directed and *JSON false* for undirected.  The graph is directed if this property is not present.
 - A `nodes` property provides the nodes in the graph.  Its value is an array of `node object`_.
 - An `edges` property provides the edges in the graph.  Its value is an array of `edge object`_.
 
@@ -147,6 +148,7 @@ Examples
     {
         "graph": {
             "id": "default",
+            "directed": false,
             "type": "social",
             "label": "Social graph",
             "nodes": [
