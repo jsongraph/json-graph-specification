@@ -2,11 +2,13 @@ require 'json'
 require 'json-schema'
 require "test/unit"
  
-class ValidateExamples < Test::Unit::TestCase
+class SchemaTest < Test::Unit::TestCase
 
   def test_validate_schema
-    schema = JSON.parse File.read('json-graph-schema.json')
+    project_root = Pathname(File.dirname(File.expand_path __FILE__)) + '..'
+    schema = JSON.parse File.read(project_root + 'json-graph-schema.json')
     errors = JSON::Validator.fully_validate_schema(schema)
+
     assert errors.empty?, errors.join("\n")
   end
 end
