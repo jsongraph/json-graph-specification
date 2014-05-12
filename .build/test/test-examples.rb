@@ -6,9 +6,9 @@ require 'pathname'
 class ExamplesTest < Test::Unit::TestCase
 
   def setup
-    project_root = Pathname(File.dirname(File.expand_path __FILE__)) + '..'
-    @schema = JSON.parse File.read(project_root + 'json-graph-schema.json')
-    @examples = Dir[project_root + 'examples' + '*.json']
+    root = Pathname(File.dirname(File.expand_path __FILE__)) + '..' + '..'
+    @schema = JSON.parse File.read(root + 'json-graph-schema.json')
+    @examples = Dir[root + 'examples' + '*.json']
   end
 
   def test_examples
