@@ -199,6 +199,6 @@ Links
 
 - `JSON schema`_
 
-.. _JSON graph schema: https://github.com/jsongraph/json-graph-specification/blob/master/schema.json
+.. _JSON graph schema: https://github.com/jsongraph/json-graph-specification/blob/master/json-graph-schema.json
 .. _JSON schema: http://json-schema.org
 .. _real world examples: https://github.com/jsongraph/json-graph-specification/tree/master/examples
