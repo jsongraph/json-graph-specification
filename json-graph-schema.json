@@ -21,7 +21,6 @@
                             "properties": {
                                 "id":       { "type": "string" },
                                 "label":    { "type": "string" },
-                                "type":     { "type": "string" },
                                 "metadata": { "type": ["object", "null"] }
                             },
                             "required": ["id"]
@@ -37,7 +36,7 @@
                             "properties": {
                                 "source":   { "type": "string" },
                                 "target":   { "type": "string" },
-                                "type":     { "type": "string" },
+                                "rel":      { "type": "string" },
                                 "metadata": { "type": ["object", "null"] }
                             },
                             "required": ["source", "target"]
