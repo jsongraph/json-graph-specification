@@ -5,7 +5,7 @@
     "properties": {
         "graph": {
             "type": "object",
-            "additionalProperties": "blue",
+            "additionalProperties": false,
             "properties": {
                 "id":       { "type": "string" },
                 "label":    { "type": "string" },
