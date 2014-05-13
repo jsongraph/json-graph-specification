@@ -1,2 +1,5 @@
 language: ruby
 gemfile: .build/Gemfile
+env:
+  - BUNDLE_GEMFILE=.build/Gemfile
+script: 'bundle exec rake -f .build/Rakefile'

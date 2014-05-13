@@ -192,6 +192,11 @@ Schema
 
 The `JSON graph schema`_ (version 3) is provided for the json graph format.
 
+Project Tests
+-------------
+
+See `TESTING`_.
+
 .. _links:
 
 Links
@@ -202,3 +207,4 @@ Links
 .. _JSON graph schema: https://github.com/jsongraph/json-graph-specification/blob/master/json-graph-schema.json
 .. _JSON schema: http://json-schema.org
 .. _real world examples: https://github.com/jsongraph/json-graph-specification/tree/master/examples
+.. _TESTING: https://github.com/jsongraph/json-graph-specification/blob/master/TESTING.rst
