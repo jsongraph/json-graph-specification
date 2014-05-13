@@ -65,6 +65,7 @@ An edge object represents an edge in a graph.
 - Includes all `Common Properties`_
 - A `source` property provides the `id` value of the source `node object`_.  Its value is defined as a *JSON string*.
 - A `target` property provides the `id` value of the target `node object`_.  Its value is defined as a *JSON string*.
+- A `directed` property provides the edge mode (e.g. directed or undirected).  Its value is *JSON true* for directed and *JSON false* for undirected.  The edge direction is determined by *graph.directed* property if not present.
 
 .. _graph object:
 
@@ -75,7 +76,7 @@ A graph object represents a single conceptual graph.
 **graph properties**
 
 - Includes all `Common Properties`_
-- A `directed` property provides the graph mode (e.g. directed or undirected).  Its value is *JSON true* for directed and *JSON false* for undirected.  The graph is directed if this property is not present.
+- A `directed` property provides the graph mode (e.g. directed or undirected).  Its value is *JSON true* for directed and *JSON false* for undirected.  This property default to *JSON true* indicating a directed graph.
 - A `nodes` property provides the nodes in the graph.  Its value is an array of `node object`_.
 - An `edges` property provides the edges in the graph.  Its value is an array of `edge object`_.
 
@@ -178,7 +179,8 @@ Examples
                     "id": "0",
                     "source": "0",
                     "target": "1",
-                    "type": "married to",
+                    "directed": false,
+                    "rel": "married to",
                     "label": "- Married to -",
                     "metadata": {
                         "number of years": 6

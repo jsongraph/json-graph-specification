@@ -9,7 +9,7 @@
             "properties": {
                 "id":       { "type": "string" },
                 "label":    { "type": "string" },
-                "directed": { "type": ["boolean", "null"] },
+                "directed": { "type": ["boolean", "null"], "default": true },
                 "type":     { "type": "string" },
                 "metadata": { "type": ["object", "null"] },
                 "nodes": {
@@ -38,6 +38,7 @@
                                 "source":   { "type": "string" },
                                 "target":   { "type": "string" },
                                 "rel":      { "type": "string" },
+                                "directed": { "type": ["boolean", "null"], "default": true },
                                 "label":    { "type": "string" },
                                 "metadata": { "type": ["object", "null"] }
                             },

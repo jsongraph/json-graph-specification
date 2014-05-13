@@ -14,7 +14,12 @@ class ExamplesTest < Test::Unit::TestCase
   def test_examples
     @examples.each do |ex|
       data = JSON.parse File.open(ex, 'r:UTF-8', &:read)
-      errors = JSON::Validator.fully_validate(@schema, data)
+      errors = JSON::Validator.fully_validate(@schema, data, :insert_defaults => true)
+
+      if ENV['JGS_VERBOSE']
+        puts "\n\nValidated JSON for example: #{ex}"
+        pp data
+      end
 
       assert errors.empty?, errors.join("\n")
     end
