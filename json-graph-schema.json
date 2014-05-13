@@ -34,12 +34,14 @@
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
+                                "id":       { "type": "string" },
                                 "source":   { "type": "string" },
                                 "target":   { "type": "string" },
                                 "rel":      { "type": "string" },
+                                "label":    { "type": "string" },
                                 "metadata": { "type": ["object", "null"] }
                             },
-                            "required": ["source", "target"]
+                            "required": ["id", "source", "target"]
                         }
                     ]
                 }

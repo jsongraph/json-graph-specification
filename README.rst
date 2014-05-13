@@ -135,6 +135,7 @@ Examples
             ],
             "edges": [
                 {
+                    "id": "A - B",
                     "source": "A",
                     "target": "B"
                 }
@@ -174,6 +175,7 @@ Examples
             ],
             "edges": [
                 {
+                    "id": "0",
                     "source": "0",
                     "target": "1",
                     "type": "married to",
