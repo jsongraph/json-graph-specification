@@ -12,6 +12,10 @@
         {
             "type": "object",
             "properties": {
+                "id":       { "type": "string" },
+                "label":    { "type": "string" },
+                "type":     { "type": "string" },
+                "metadata": { "type": ["object", "null"] },
                 "graphs": {
                     "type": "array",
                     "minItems": 0,

@@ -24,19 +24,19 @@ Common Properties
 
 **id property**
 
-An `id` property is a primary key for an object (see Objects_) that is unique for the object type.  Its value is defined as a *JSON string* for flexibility.
+An `id` property is a primary key for an object (see Objects_) that is unique for the object type. Its value is defined as a *JSON string* for flexibility.
 
 **label property**
 
-A `label` property provides a text display for an object.  Its value is defined as a *JSON string*.
+A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
 
 **type property**
 
-A `type` property provides a classification for an object.  Its value is defined as a *JSON string*.
+A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
 
 **metadata property**
 
-A `metadata` property allows for custom data on an object.  Its values is defined as a *JSON object*.
+A `metadata` property allows for custom data on an object. Its values is defined as a *JSON object*.
 
 
 .. _objects:
@@ -63,9 +63,9 @@ An edge object represents an edge in a graph.
 **edge properties**
 
 - Includes all `Common Properties`_
-- A `source` property provides the `id` value of the source `node object`_.  Its value is defined as a *JSON string*.
-- A `target` property provides the `id` value of the target `node object`_.  Its value is defined as a *JSON string*.
-- A `directed` property provides the edge mode (e.g. directed or undirected).  Its value is *JSON true* for directed and *JSON false* for undirected.  The edge direction is determined by *graph.directed* property if not present.
+- A `source` property provides the `id` value of the source `node object`_. Its value is defined as a *JSON string*.
+- A `target` property provides the `id` value of the target `node object`_. Its value is defined as a *JSON string*.
+- A `directed` property provides the edge mode (e.g. directed or undirected). Its value is *JSON true* for directed and *JSON false* for undirected. The edge direction is determined by *graph.directed* property if not present.
 
 .. _graph object:
 
@@ -76,18 +76,29 @@ A graph object represents a single conceptual graph.
 **graph properties**
 
 - Includes all `Common Properties`_
-- A `directed` property provides the graph mode (e.g. directed or undirected).  Its value is *JSON true* for directed and *JSON false* for undirected.  This property default to *JSON true* indicating a directed graph.
-- A `nodes` property provides the nodes in the graph.  Its value is an array of `node object`_.
-- An `edges` property provides the edges in the graph.  Its value is an array of `edge object`_.
+- A `directed` property provides the graph mode (e.g. directed or undirected). Its value is *JSON true* for directed and *JSON false* for undirected. This property default to *JSON true* indicating a directed graph.
+- A `nodes` property provides the nodes in the graph. Its value is an array of `node object`_.
+- An `edges` property provides the edges in the graph. Its value is an array of `edge object`_.
+
+.. _graphs object:
+
+**graphs object**
+
+A graphs object groups zero or more `graph object`_ into one JSON document.
+
+**graphs properties**
+
+- Includes all `Common Properties`_. The `id` is not required.
+- The `graphs object`_ is defined as a *JSON array*.
 
 .. _examples:
 
 Examples
 --------
 
-.. _minimum empty:
+.. _empty single graph:
 
-**minimum (empty graph)**
+**empty single graph**
 
 .. code-block:: json
 
@@ -97,9 +108,19 @@ Examples
         }
     }
 
-.. _minimum nodes:
+.. _empty multi graph:
 
-**minimum (nodes only)**
+**empty multi graph**
+
+.. code-block:: json
+
+    {
+        "graphs": []
+    }
+
+.. _nodes-only single graph:
+
+**nodes-only single graph**
 
 .. code-block:: json
 
@@ -117,9 +138,9 @@ Examples
         }
     }
 
-.. _minimum nodes edges:
+.. _nodes/edges single graph:
 
-**minimum (nodes and edges)**
+**nodes/edges single graph**
 
 .. code-block:: json
 
@@ -144,9 +165,9 @@ Examples
         }
     }
 
-.. _complete:
+.. _complete single graph:
 
-**complete**
+**complete single graph**
 
 .. code-block:: json
 
@@ -154,23 +175,26 @@ Examples
         "graph": {
             "id": "default",
             "directed": false,
-            "type": "social",
-            "label": "Social graph",
+            "type": "graph type",
+            "label": "graph label",
+            "metadata": {
+                "user-defined": "values"
+            }
             "nodes": [
                 {
                     "id": "0",
-                    "type": "person",
-                    "label": "Bob Smith",
+                    "type": "node type",
+                    "label": "node label(0)",
                     "metadata": {
-                        "nickname": "Bobby"
+                        "user-defined": "values"
                     }
                 },
                 {
                     "id": "1",
-                    "type": "person",
-                    "label": "Patty Smith"
+                    "type": "node type",
+                    "label": "node label(1)"
                     "metadata": {
-                        "nickname": "Pat"
+                        "user-defined": "values"
                     }
                 }
             ],
@@ -180,14 +204,105 @@ Examples
                     "source": "0",
                     "target": "1",
                     "directed": false,
-                    "rel": "married to",
-                    "label": "- Married to -",
+                    "rel": "edge relationship",
+                    "label": "edge label",
                     "metadata": {
-                        "number of years": 6
+                        "user-defined": "values"
                     }
                 }
             ]
         }
+    }
+
+.. _complete multiple graph:
+
+**complete multi graph**
+
+.. code-block:: json
+
+    {
+        "graphs": [
+            {
+                "id": "graph0",
+                "directed": true,
+                "type": "graph type",
+                "label": "graph label",
+                "metadata": {
+                    "user-defined": "values"
+                }
+                "nodes": [
+                    {
+                        "id": "0",
+                        "type": "node type",
+                        "label": "node label(0)",
+                        "metadata": {
+                            "user-defined": "values"
+                        }
+                    },
+                    {
+                        "id": "1",
+                        "type": "node type",
+                        "label": "node label(1)"
+                        "metadata": {
+                            "user-defined": "values"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "0",
+                        "source": "0",
+                        "target": "1",
+                        "directed": true,
+                        "rel": "edge relationship",
+                        "label": "edge label",
+                        "metadata": {
+                            "user-defined": "values"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "graph1",
+                "directed": true,
+                "type": "graph type",
+                "label": "graph label",
+                "metadata": {
+                    "user-defined": "values"
+                }
+                "nodes": [
+                    {
+                        "id": "0",
+                        "type": "node type",
+                        "label": "node label(0)",
+                        "metadata": {
+                            "user-defined": "values"
+                        }
+                    },
+                    {
+                        "id": "1",
+                        "type": "node type",
+                        "label": "node label(1)"
+                        "metadata": {
+                            "user-defined": "values"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "0",
+                        "source": "1",
+                        "target": "0",
+                        "directed": true,
+                        "rel": "edge relationship",
+                        "label": "edge label",
+                        "metadata": {
+                            "user-defined": "values"
+                        }
+                    }
+                ]
+            }
+        ]
     }
 
 More `real world examples`_.
