@@ -18,7 +18,6 @@
                 "metadata": { "type": ["object", "null"] },
                 "graphs": {
                     "type": "array",
-                    "minItems": 0,
                     "items": [
                         { "$ref": "#/definitions/graph" }
                     ]
