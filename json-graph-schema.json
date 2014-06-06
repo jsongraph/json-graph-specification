@@ -1,8 +1,29 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema",
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
+    "oneOf": [
+        {
+            "type": "object",
+            "properties": {
+                "graph": { "$ref": "#/definitions/graph" }
+            },
+            "additionalProperties": false,
+            "required": ["graph"]
+        },
+        {
+            "type": "object",
+            "properties": {
+                "graphs": {
+                    "type": "array",
+                    "minItems": 0,
+                    "items": [
+                        { "$ref": "#/definitions/graph" }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    ],
+    "definitions": {
         "graph": {
             "type": "object",
             "additionalProperties": false,
@@ -49,6 +70,5 @@
             },
             "required": ["id"]
         }
-    },
-    "required": ["graph"]
+    }
 }

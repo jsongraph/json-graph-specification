@@ -1,0 +1,74 @@
+{
+    "graphs": [
+        {
+            "id": "car-manufacturer-relationships",
+            "type": "car",
+            "label": "Car Manufacturer Relationships",
+            "nodes": [
+                {
+                    "id": "nissan",
+                    "label": "Nissan"
+                },
+                {
+                    "id": "infiniti",
+                    "label": "Infiniti"
+                },
+                {
+                    "id": "toyota",
+                    "label": "Toyota"
+                },
+                {
+                    "id": "lexus",
+                    "label": "Lexus"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "2",
+                    "source": "nissan",
+                    "target": "infiniti",
+                    "rel": "has_luxury_division"
+                },
+                {
+                    "id": "1",
+                    "source": "toyota",
+                    "target": "lexus",
+                    "rel": "has_luxury_division"
+                }
+            ]
+        },
+        {
+            "id": "car-manufacturer-countries",
+            "type": "car",
+            "label": "Car Manufacturer Countries",
+            "nodes": [
+                {
+                    "id": "japan",
+                    "label": "Japan"
+                },
+                {
+                    "id": "nissan",
+                    "label": "Nissan"
+                },
+                {
+                    "id": "toyota",
+                    "label": "Toyota"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "1",
+                    "source": "nissan",
+                    "target": "japan",
+                    "rel": "country_of_origin"
+                },
+                {
+                    "id": "2",
+                    "source": "nissan",
+                    "target": "japan",
+                    "rel": "country_of_origin"
+                }
+            ]
+        }
+    ]
+}
