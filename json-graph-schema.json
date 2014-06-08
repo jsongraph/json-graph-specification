@@ -18,9 +18,9 @@
                 "metadata": { "type": ["object", "null"] },
                 "graphs": {
                     "type": "array",
-                    "items": [
-                        { "$ref": "#/definitions/graph" }
-                    ]
+                    "items": {
+                        "$ref": "#/definitions/graph"
+                    }
                 }
             },
             "additionalProperties": false
@@ -38,37 +38,33 @@
                 "metadata": { "type": ["object", "null"] },
                 "nodes": {
                     "type": ["array", "null"],
-                    "items": [
-                        {
-                            "type": "object",
-                            "additionalProperties": false,
-                            "properties": {
-                                "id":       { "type": "string" },
-                                "label":    { "type": "string" },
-                                "metadata": { "type": ["object", "null"] }
-                            },
-                            "required": ["id"]
-                        }
-                    ]
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id":       { "type": "string" },
+                            "label":    { "type": "string" },
+                            "metadata": { "type": ["object", "null"] }
+                        },
+                        "required": ["id"]
+                    }
                 },
                 "edges": {
                     "type": ["array", "null"],
-                    "items": [
-                        {
-                            "type": "object",
-                            "additionalProperties": false,
-                            "properties": {
-                                "id":       { "type": "string" },
-                                "source":   { "type": "string" },
-                                "target":   { "type": "string" },
-                                "rel":      { "type": "string" },
-                                "directed": { "type": ["boolean", "null"], "default": true },
-                                "label":    { "type": "string" },
-                                "metadata": { "type": ["object", "null"] }
-                            },
-                            "required": ["id", "source", "target"]
-                        }
-                    ]
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id":       { "type": "string" },
+                            "source":   { "type": "string" },
+                            "target":   { "type": "string" },
+                            "rel":      { "type": "string" },
+                            "directed": { "type": ["boolean", "null"], "default": true },
+                            "label":    { "type": "string" },
+                            "metadata": { "type": ["object", "null"] }
+                        },
+                        "required": ["id", "source", "target"]
+                    }
                 }
             },
             "required": ["id"]
