@@ -4,7 +4,7 @@ json-graph-specification
 .. image:: https://travis-ci.org/jsongraph/json-graph-specification.svg?branch=master
     :target: https://travis-ci.org/jsongraph/json-graph-specification
 
-A proposal for representing graph structure es / edges) in JSON.
+A proposal for representing graph structures in JSON.
 
 Design principles
 -----------------
