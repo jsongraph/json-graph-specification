@@ -27,13 +27,13 @@
                     "id": "2",
                     "source": "nissan",
                     "target": "infiniti",
-                    "rel": "has_luxury_division"
+                    "relation": "has_luxury_division"
                 },
                 {
                     "id": "1",
                     "source": "toyota",
                     "target": "lexus",
-                    "rel": "has_luxury_division"
+                    "relation": "has_luxury_division"
                 }
             ]
         },
@@ -60,13 +60,13 @@
                     "id": "1",
                     "source": "nissan",
                     "target": "japan",
-                    "rel": "country_of_origin"
+                    "relation": "country_of_origin"
                 },
                 {
                     "id": "2",
                     "source": "nissan",
                     "target": "japan",
-                    "rel": "country_of_origin"
+                    "relation": "country_of_origin"
                 }
             ]
         }

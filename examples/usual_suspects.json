@@ -25,7 +25,7 @@
                 "id": "Roger Kint (is) Keyser Söze",
                 "source": "Roger Kint",
                 "target": "Keyser Söze",
-                "rel": "is"
+                "relation": "is"
             }
         ],
         "metadata": {
