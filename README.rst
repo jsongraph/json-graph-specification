@@ -15,30 +15,6 @@ Design principles
 - Properties that allow a ``null`` value can be omitted.
 - Define a `JSON graph schema`_ for content validation purposes.
 
-.. _properties:
-
-Common Properties
------------------
-
-.. _id property:
-
-**id property**
-
-An `id` property is a primary key for an object (see Objects_) that is unique for the object type. Its value is defined as a *JSON string* for flexibility.
-
-**label property**
-
-A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
-
-**type property**
-
-A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
-
-**metadata property**
-
-A `metadata` property allows for custom data on an object. Its values is defined as a *JSON object*.
-
-
 .. _objects:
 
 Objects
@@ -52,7 +28,10 @@ A node object represents a node in a graph.
 
 **node properties**
 
-- Includes all `Common Properties`_
+- An `id` property is a primary key for an object (see Objects_) that is unique for the object type. Its value is defined as a *JSON string* for flexibility.
+- A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
+- A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
+- A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
 
 .. _edge object:
 
@@ -62,10 +41,11 @@ An edge object represents an edge in a graph.
 
 **edge properties**
 
-- Includes all `Common Properties`_
 - A `source` property provides the `id` value of the source `node object`_. Its value is defined as a *JSON string*.
+- A `relation` property provides the interaction between `source` and `target` nodes.  Its value is defined as a *JSON string*.
 - A `target` property provides the `id` value of the target `node object`_. Its value is defined as a *JSON string*.
 - A `directed` property provides the edge mode (e.g. directed or undirected). Its value is *JSON true* for directed and *JSON false* for undirected. The edge direction is determined by *graph.directed* property if not present.
+- A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
 
 .. _graph object:
 
@@ -75,10 +55,12 @@ A graph object represents a single conceptual graph.
 
 **graph properties**
 
-- Includes all `Common Properties`_
+- A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
+- A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
 - A `directed` property provides the graph mode (e.g. directed or undirected). Its value is *JSON true* for directed and *JSON false* for undirected. This property default to *JSON true* indicating a directed graph.
 - A `nodes` property provides the nodes in the graph. Its value is an array of `node object`_.
 - An `edges` property provides the edges in the graph. Its value is an array of `edge object`_.
+- A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
 
 .. _graphs object:
 
@@ -86,9 +68,6 @@ A graph object represents a single conceptual graph.
 
 A graphs object groups zero or more `graph object`_ into one JSON document.
 
-**graphs properties**
-
-- Includes all `Common Properties`_. The `id` is not required.
 - The `graphs object`_ is defined as a *JSON array*.
 
 .. _examples:
@@ -103,9 +82,7 @@ Examples
 .. code-block:: json
 
     {
-        "graph": {
-            "id": "default"
-        }
+        "graph": {}
     }
 
 .. _empty multi graph:
@@ -126,7 +103,6 @@ Examples
 
     {
         "graph": {
-            "id": "default",
             "nodes": [
                 {
                     "id": "A",
@@ -146,7 +122,6 @@ Examples
 
     {
         "graph": {
-            "id": "default",
             "nodes": [
                 {
                     "id": "A",
@@ -157,7 +132,6 @@ Examples
             ],
             "edges": [
                 {
-                    "id": "A - B",
                     "source": "A",
                     "target": "B"
                 }
@@ -173,7 +147,6 @@ Examples
 
     {
         "graph": {
-            "id": "default",
             "directed": false,
             "type": "graph type",
             "label": "graph label",
@@ -200,11 +173,10 @@ Examples
             ],
             "edges": [
                 {
-                    "id": "0",
                     "source": "0",
+                    "relation": "edge relationship",
                     "target": "1",
                     "directed": false,
-                    "rel": "edge relationship",
                     "label": "edge label",
                     "metadata": {
                         "user-defined": "values"
@@ -223,7 +195,6 @@ Examples
     {
         "graphs": [
             {
-                "id": "graph0",
                 "directed": true,
                 "type": "graph type",
                 "label": "graph label",
@@ -250,11 +221,10 @@ Examples
                 ],
                 "edges": [
                     {
-                        "id": "0",
                         "source": "0",
+                        "relation": "edge relationship",
                         "target": "1",
                         "directed": true,
-                        "rel": "edge relationship",
                         "label": "edge label",
                         "metadata": {
                             "user-defined": "values"
@@ -263,7 +233,6 @@ Examples
                 ]
             },
             {
-                "id": "graph1",
                 "directed": true,
                 "type": "graph type",
                 "label": "graph label",
@@ -290,11 +259,10 @@ Examples
                 ],
                 "edges": [
                     {
-                        "id": "0",
                         "source": "1",
+                        "relation": "edge relationship",
                         "target": "0",
                         "directed": true,
-                        "rel": "edge relationship",
                         "label": "edge label",
                         "metadata": {
                             "user-defined": "values"

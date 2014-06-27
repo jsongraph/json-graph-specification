@@ -46,9 +46,6 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "id": {
-                    "type": "string"
-                },
                 "label": {
                     "type": "string"
                 },
@@ -134,16 +131,12 @@
                             }
                         },
                         "required": [
-                            "id",
                             "source",
                             "target"
                         ]
                     }
                 }
-            },
-            "required": [
-                "id"
-            ]
+            }
         }
     }
 }
