@@ -70,6 +70,12 @@ A graphs object groups zero or more `graph object`_ into one JSON document.
 
 - The `graphs object`_ is defined as a *JSON array*.
 
+**graphs properties**
+
+- A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
+- A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
+- A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
+
 .. _examples:
 
 Examples
