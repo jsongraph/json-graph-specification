@@ -1,61 +1,72 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema",
-    "oneOf": [{
-        "type": "object",
-        "properties": {
-            "graph": {
-                "$ref": "#/definitions/graph"
-            }
-        },
-        "additionalProperties": false,
-        "required": ["graph"]
-    }, {
-        "type": "object",
-        "properties": {
-            "id": {
-                "type": "string"
-            },
-            "label": {
-                "type": "string"
-            },
-            "type": {
-                "type": "string"
-            },
-            "metadata": {
-                "type": ["object", "null"]
-            },
-            "graphs": {
-                "type": "array",
-                "items": {
+    "oneOf": [
+        {
+            "type": "object",
+            "properties": {
+                "graph": {
                     "$ref": "#/definitions/graph"
                 }
-            }
+            },
+            "additionalProperties": false,
+            "required": [
+                "graph"
+            ]
         },
-        "additionalProperties": false
-    }],
+        {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "graphs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/graph"
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    ],
     "definitions": {
         "graph": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "id": {
-                    "type": "string"
-                },
                 "label": {
                     "type": "string"
                 },
                 "directed": {
-                    "type": ["boolean", "null"],
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
                     "default": true
                 },
                 "type": {
                     "type": "string"
                 },
                 "metadata": {
-                    "type": ["object", "null"]
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "nodes": {
-                    "type": ["array", "null"],
+                    "type": [
+                        "array",
+                        "null"
+                    ],
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
@@ -67,14 +78,22 @@
                                 "type": "string"
                             },
                             "metadata": {
-                                "type": ["object", "null"]
+                                "type": [
+                                    "object",
+                                    "null"
+                                ]
                             }
                         },
-                        "required": ["id"]
+                        "required": [
+                            "id"
+                        ]
                     }
                 },
                 "edges": {
-                    "type": ["array", "null"],
+                    "type": [
+                        "array",
+                        "null"
+                    ],
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
@@ -92,21 +111,29 @@
                                 "type": "string"
                             },
                             "directed": {
-                                "type": ["boolean", "null"],
+                                "type": [
+                                    "boolean",
+                                    "null"
+                                ],
                                 "default": true
                             },
                             "label": {
                                 "type": "string"
                             },
                             "metadata": {
-                                "type": ["object", "null"]
+                                "type": [
+                                    "object",
+                                    "null"
+                                ]
                             }
                         },
-                        "required": ["id", "source", "target"]
+                        "required": [
+                            "source",
+                            "target"
+                        ]
                     }
                 }
-            },
-            "required": ["id"]
+            }
         }
     }
 }

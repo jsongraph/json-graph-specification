@@ -1,6 +1,5 @@
 {
     "graph": {
-        "id": "default",
         "type": "movie characters",
         "label": "Usual Suspects",
         "nodes": [
@@ -22,10 +21,9 @@
         ],
         "edges": [
             {
-                "id": "Roger Kint (is) Keyser Söze",
                 "source": "Roger Kint",
                 "target": "Keyser Söze",
-                "rel": "is"
+                "relation": "is"
             }
         ],
         "metadata": {
