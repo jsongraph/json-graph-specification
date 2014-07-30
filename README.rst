@@ -229,7 +229,7 @@ Examples
                 "label": "graph label",
                 "metadata": {
                     "user-defined": "values"
-                }
+                },
                 "nodes": [
                     {
                         "id": "0",
@@ -269,7 +269,7 @@ Examples
                 "label": "graph label",
                 "metadata": {
                     "user-defined": "values"
-                }
+                },
                 "nodes": [
                     {
                         "id": "0",
