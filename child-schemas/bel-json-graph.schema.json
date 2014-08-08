@@ -1,0 +1,192 @@
+        }, {
+            "$schema": "http://json-schema.org/draft-04/schema",
+            "oneOf": [{
+                "type": "object",
+                "properties": {
+                    "graph": {
+                        "$ref": "#/definitions/graph"
+                    }
+                },
+                "additionalProperties": false,
+                "required": ["graph"]
+            }, {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "title": "",
+                        "description": "",
+                        "name": ""
+                    },
+                    "label": {
+                        "type": "string",
+                        "title": "",
+                        "description": "",
+                        "name": ""
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "",
+                        "description": "",
+                        "name": ""
+                    },
+                    "metadata": {
+                        "type": ["object", "null"],
+                        "title": "",
+                        "description": "",
+                        "name": ""
+                    },
+                    "graphs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/graph"
+                        }
+                    }
+                },
+                "additionalProperties": false
+            }],
+            "definitions": {
+                "graph": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "label": {
+                            "type": "string"
+                        },
+                        "directed": {
+                            "type": ["boolean", "null"],
+                            "default": true
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "metadata": {
+                            "type": ["object", "null"],
+                            "additionalProperties": true,
+                            "properties": {
+                                "ncbi_tax_id": {
+                                    "type": "integer"
+                                },
+                                "species_common_name": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+
+                            }
+                        },
+                        "nodes": {
+                            "type": ["array", "null"],
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "label": {
+                                        "type": "string"
+                                    },
+                                    "metadata": {
+                                        "type": ["object", "null"],
+                                        "additionalProperties": true,
+                                        "properties": {
+                                            "x_loc": {
+                                                "type": "number"
+                                            },
+                                            "y_loc": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["id"]
+                            }
+                        },
+                        "edges": {
+                            "type": ["array", "null"],
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "source": {
+                                        "type": "string"
+                                    },
+                                    "target": {
+                                        "type": "string"
+                                    },
+                                    "rel": {
+                                        "type": "string"
+                                    },
+                                    "directed": {
+                                        "type": ["boolean", "null"],
+                                        "default": true
+                                    },
+                                    "label": {
+                                        "type": "string"
+                                    },
+                                    "metadata": {
+                                        "type": ["object", "null"],
+                                        "additionalProperties": true,
+                                        "properties": {
+                                            "evidences": {
+                                                "type": "array",
+                                                "items": {
+                                                    "$ref": "#/definitions/evidence"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["id", "source", "target"]
+                            }
+                        }
+                    },
+                    "required": ["id"]
+                },
+                "evidence": {
+                    "type": "object",
+                    "properties": {
+                        "bel_statement": {
+                            "type": "string"
+                        },
+                        "citation": {
+                            "type": "object",
+                            "properties": {
+                                "reference_type": {
+                                    "type": "string"
+                                },
+                                "reference_id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                            }
+                        },
+                        "biological_context": {
+                            "type": "object",
+                            "additionalProperties": true,
+                            "properties": {
+                                "ncbi_tax_id": {
+                                    "type": "integer"
+                                },
+                                "species_common_name": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "summary_text": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
