@@ -1,192 +1,226 @@
-        }, {
-            "$schema": "http://json-schema.org/draft-04/schema",
-            "oneOf": [{
-                "type": "object",
-                "properties": {
-                    "graph": {
-                        "$ref": "#/definitions/graph"
-                    }
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "oneOf": [{
+        "type": "object",
+        "properties": {
+            "graph": {
+                "$ref": "#/definitions/graph"
+            }
+        },
+        "additionalProperties": false,
+        "required": ["graph"]
+    }, {
+        "type": "object",
+        "properties": {
+            "label": {
+                "type": "string",
+                "title": "Graph Set Label",
+                "description": "Graph Set label",
+                "name": "graph_set_label"
+            },
+            "type": {
+                "type": "string",
+                "title": "Type of Graphs in Set",
+                "description": "Graph types in graph set",
+                "name": "graph_set_type"
+            },
+            "metadata": {
+                "type": ["object", "null"],
+                "title": "Graph Set Metadata",
+                "description": "Graph set metadata",
+                "name": "graph_set_metadata"
+            },
+            "graphs": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/graph"
+                }
+            }
+        },
+        "additionalProperties": false
+    }],
+    "definitions": {
+        "graph": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "title": "Graph Label",
+                    "description": "Graph label",
+                    "name": "graph_label"
                 },
-                "additionalProperties": false,
-                "required": ["graph"]
-            }, {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "title": "",
-                        "description": "",
-                        "name": ""
-                    },
-                    "label": {
-                        "type": "string",
-                        "title": "",
-                        "description": "",
-                        "name": ""
-                    },
-                    "type": {
-                        "type": "string",
-                        "title": "",
-                        "description": "",
-                        "name": ""
-                    },
-                    "metadata": {
-                        "type": ["object", "null"],
-                        "title": "",
-                        "description": "",
-                        "name": ""
-                    },
-                    "graphs": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/definitions/graph"
+                "directed": {
+                    "type": ["boolean", "null"],
+                    "description": "Directed or undirected graph",
+                    "default": true
+                },
+                "type": {
+                    "type": "string",
+                    "title": "Type of Graph",
+                    "description": "Graph type",
+                    "name": "graph_type"
+                },
+                "metadata": {
+                    "type": ["object", "null"],
+                    "additionalProperties": true,
+                    "properties": {
+                        "ncbi_tax_id": {
+                            "type": "integer",
+                            "title": "NCBI Taxonomy ID - ",
+                            "description": "NCBI Taxonomy ID - http://www.ncbi.nlm.nih.gov/taxonomy"
+                        },
+                        "species_common_name": {
+                            "type": "string",
+                            "title": "Species Common Name",
+                            "description": "Species common name, e.g. human, mouse, rat"
+                        },
+                        "description": {
+                            "type": "string",
+                            "title": "Graph description",
+                            "description": "Graph description"
                         }
                     }
                 },
-                "additionalProperties": false
-            }],
-            "definitions": {
-                "graph": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                        "id": {
-                            "type": "string"
-                        },
-                        "label": {
-                            "type": "string"
-                        },
-                        "directed": {
-                            "type": ["boolean", "null"],
-                            "default": true
-                        },
-                        "type": {
-                            "type": "string"
-                        },
-                        "metadata": {
-                            "type": ["object", "null"],
-                            "additionalProperties": true,
-                            "properties": {
-                                "ncbi_tax_id": {
-                                    "type": "integer"
-                                },
-                                "species_common_name": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
+                "nodes": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "type": ["object", "null"],
+                                "additionalProperties": true,
+                                "properties": {
 
-                            }
-                        },
-                        "nodes": {
-                            "type": ["array", "null"],
-                            "items": {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "properties": {
-                                    "id": {
-                                        "type": "string"
+                                    "x": {
+                                        "type": "number",
+                                        "title": "X coordinate",
+                                        "description": "x coordinate of node location"
                                     },
-                                    "label": {
-                                        "type": "string"
+                                    "y": {
+                                        "type": "number",
+                                        "title": "Y coordinate",
+                                        "description": "y coordinate of node location"
                                     },
-                                    "metadata": {
-                                        "type": ["object", "null"],
-                                        "additionalProperties": true,
-                                        "properties": {
-                                            "x_loc": {
-                                                "type": "number"
-                                            },
-                                            "y_loc": {
-                                                "type": "number"
-                                            }
-                                        }
+                                    "z": {
+                                        "type": "number",
+                                        "title": "Z coordinate",
+                                        "description": "z coordinate of node location - not needed for 2D visualizations"
                                     }
-                                },
-                                "required": ["id"]
-                            }
-                        },
-                        "edges": {
-                            "type": ["array", "null"],
-                            "items": {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "properties": {
-                                    "id": {
-                                        "type": "string"
-                                    },
-                                    "source": {
-                                        "type": "string"
-                                    },
-                                    "target": {
-                                        "type": "string"
-                                    },
-                                    "rel": {
-                                        "type": "string"
-                                    },
-                                    "directed": {
-                                        "type": ["boolean", "null"],
-                                        "default": true
-                                    },
-                                    "label": {
-                                        "type": "string"
-                                    },
-                                    "metadata": {
-                                        "type": ["object", "null"],
-                                        "additionalProperties": true,
-                                        "properties": {
-                                            "evidences": {
-                                                "type": "array",
-                                                "items": {
-                                                    "$ref": "#/definitions/evidence"
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                "required": ["id", "source", "target"]
-                            }
-                        }
-                    },
-                    "required": ["id"]
-                },
-                "evidence": {
-                    "type": "object",
-                    "properties": {
-                        "bel_statement": {
-                            "type": "string"
-                        },
-                        "citation": {
-                            "type": "object",
-                            "properties": {
-                                "reference_type": {
-                                    "type": "string"
-                                },
-                                "reference_id": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                },
-                            }
-                        },
-                        "biological_context": {
-                            "type": "object",
-                            "additionalProperties": true,
-                            "properties": {
-                                "ncbi_tax_id": {
-                                    "type": "integer"
-                                },
-                                "species_common_name": {
-                                    "type": "string"
                                 }
                             }
                         },
-                        "summary_text": {
-                            "type": "string"
-                        }
+                        "required": ["id"]
+                    }
+                },
+                "edges": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string",
+                                "title": "Source Node",
+                                "description": "First node in edge triple"
+                            },
+                            "target": {
+                                "type": "string",
+                                "title": "Target Node",
+                                "description": "Second node in edge triple"
+                            },
+                            "relation": {
+                                "type": "string",
+                                "title": "Edge relationship",
+                                "description": "Relationship between nodes in edge - may be directed or undirected"
+                            },
+                            "directed": {
+                                "type": ["boolean", "null"],
+                                "default": true
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "type": ["object", "null"],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "evidences": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/evidence"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "required": ["source", "target"]
                     }
                 }
             }
+        },
+        "evidence": {
+            "type": "object",
+            "properties": {
+                "bel_statement": {
+                    "type": "string",
+                    "title": "BEL Statement",
+                    "description": "OpenBEL.org BEL Statement"
+                },
+                "citation": {
+                    "type": "object",
+                    "properties": {
+                        "reference_type": {
+                            "type": "string",
+                            "title": "Reference Type",
+                            "description": "The reference type of this citation."
+                        },
+                        "reference_id": {
+                            "type": "string",
+                            "title": "Reference ID",
+                            "description": "Identifier of the reference, e.g. PubMed ID"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Reference Name",
+                            "description": "Name or citation string for the citation."
+                        }
+                    },
+                    "title": "Citation for Edge Evidence",
+                    "description": "Reference to support the evidence presented for the Edge"
+                },
+                "biological_context": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                        "ncbi_tax_id": {
+                            "type": "integer",
+                            "title": "NCBI Taxonomy ID",
+                            "description": "NCBI taxonomy id - e.g. 9606 is the id for Homo sapien"
+                        },
+                        "species_common_name": {
+                            "type": "string",
+                            "title": "Species common name",
+                            "description": "Common name for species like human, mouse or rat"
+                        }
+                    }
+                },
+                "summary_text": {
+                    "type": "string",
+                    "title": "Summary Text",
+                    "description": "Abstract from source text to provide support for this evidence"
+                }
+            }
         }
+    }
+}
