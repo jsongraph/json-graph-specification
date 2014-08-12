@@ -1,9 +1,10 @@
 require 'json'
 require 'json-schema'
-require 'test/unit'
 require 'pathname'
- 
-class ExamplesTest < Test::Unit::TestCase
+require 'minitest/autorun'
+require 'minitest/unit'
+
+class ExamplesTest < MiniTest::Unit::TestCase
 
   def setup
     root = Pathname(File.dirname(File.expand_path __FILE__)) + '..' + '..'
