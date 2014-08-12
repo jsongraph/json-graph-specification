@@ -39,6 +39,65 @@
         }
     ],
     "definitions": {
+        "node": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "edge": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                },
+                "relation": {
+                    "type": "string"
+                },
+                "directed": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "default": true
+                },
+                "label": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "source",
+                "target"
+            ]
+        },
         "graph": {
             "type": "object",
             "additionalProperties": false,
@@ -68,25 +127,7 @@
                         "null"
                     ],
                     "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "id": {
-                                "type": "string"
-                            },
-                            "label": {
-                                "type": "string"
-                            },
-                            "metadata": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "id"
-                        ]
+                        "$ref": "#/definitions/node"
                     }
                 },
                 "edges": {
@@ -95,42 +136,7 @@
                         "null"
                     ],
                     "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "id": {
-                                "type": "string"
-                            },
-                            "source": {
-                                "type": "string"
-                            },
-                            "target": {
-                                "type": "string"
-                            },
-                            "relation": {
-                                "type": "string"
-                            },
-                            "directed": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ],
-                                "default": true
-                            },
-                            "label": {
-                                "type": "string"
-                            },
-                            "metadata": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "source",
-                            "target"
-                        ]
+                        "$ref": "#/definitions/edge"
                     }
                 }
             }
