@@ -169,22 +169,23 @@
                 "title": "BEL Statement",
                 "description": "OpenBEL.org BEL Statement"
             },
-            "reference": {
+            "citation": {
                 "type": "object",
                 "properties": {
-                    "reference_type": {
+                    "citation_type": {
                         "type": "string",
-                        "title": "Reference Type",
-                        "description": "The reference type of this citation."
+                        "oneOf": ["PubMed", "Book", "Journal", "Online Resource", "Other"],
+                        "title": "Citation Type",
+                        "description": "The citation type"
                     },
-                    "reference_id": {
+                    "citation_id": {
                         "type": "string",
-                        "title": "Reference ID",
-                        "description": "Identifier of the reference, e.g. PubMed ID"
+                        "title": "Citation ID",
+                        "description": "Identifier of the citation, e.g. PubMed ID"
                     },
-                    "reference_name": {
+                    "citation_name": {
                         "type": "string",
-                        "title": "Reference Name",
+                        "title": "Citation Name",
                         "description": "Name or citation string for the reference."
                     }
                 },
