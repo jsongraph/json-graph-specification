@@ -56,7 +56,7 @@
                 "type": {
                     "type": "string",
                     "title": "Type of Graph",
-                    "description": "Graph type"
+                    "description": "BEL Versioned Graph type"
                 },
                 "metadata": {
                     "type": ["object", "null"],
@@ -77,9 +77,9 @@
                             "title": "Graph description",
                             "description": "Graph description"
                         },
-                        "network_version": {
+                        "version": {
                             "type": "string",
-                            "description": "Version of the network"
+                            "description": "Version of the graph"
                         }
                     }
                 },
@@ -99,14 +99,18 @@
                                 "type": ["object", "null"],
                                 "additionalProperties": true,
                                 "properties": {
-                                    "coordinates": {
+                                    "coordinate": {
                                         "type": "array",
                                         "items": {
                                             "type": "number"
                                         },
                                         "minItems": 2,
                                         "title": "Node coordinates",
-                                        "description": "Node coordinates as either an (x, y) or (x, y, z) tuple"
+                                        "description": "Node coordinates as either an (x, y) or (x, y, z) tuple, the tuple is unbounded to allow additional dimensions to be used in addition to x, y and z coordinates"
+                                    },
+                                    "bel_function_type": {
+                                        "type": "string",
+                                        "description": "BEL function types such as proteinAbundance, trancriptionalActivity, etc"
                                     }
                                 }
                             }
@@ -121,9 +125,6 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "id": {
-                            "type": "string"
-                        },
                         "source": {
                             "type": "string",
                             "title": "Source Node",
@@ -150,6 +151,10 @@
                             "type": ["object", "null"],
                             "additionalProperties": true,
                             "properties": {
+                                "causal": {
+                                    "type": "boolean",
+                                    "description": "True if a BEL causal edge type"
+                                },
                                 "evidences": {
                                     "type": "array",
                                     "items": {
@@ -176,25 +181,25 @@
             "citation": {
                 "type": "object",
                 "properties": {
-                    "citation_type": {
+                    "type": {
                         "type": "string",
                         "oneOf": ["PubMed", "Book", "Journal", "Online Resource", "Other"],
                         "title": "Citation Type",
                         "description": "The citation type"
                     },
-                    "citation_id": {
+                    "id": {
                         "type": "string",
                         "title": "Citation ID",
                         "description": "Identifier of the citation, e.g. PubMed ID"
                     },
-                    "citation_name": {
+                    "name": {
                         "type": "string",
                         "title": "Citation Name",
                         "description": "Name or citation string for the reference."
                     }
                 },
-                "title": "Reference for Edge Evidence",
-                "description": "Reference to support the evidence presented for the Edge"
+                "title": "Citation for Edge Evidence",
+                "description": "Citation to support the evidence presented for the Edge"
             },
             "biological_context": {
                 "type": "object",
