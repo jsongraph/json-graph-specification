@@ -76,6 +76,10 @@
                             "type": "string",
                             "title": "Graph description",
                             "description": "Graph description"
+                        },
+                        "network_version": {
+                            "type": "string",
+                            "description": "Version of the network"
                         }
                     }
                 },
@@ -162,7 +166,7 @@
     },
     "bel_evidence": {
         "type": "object",
-        "required": ["bel_statement", "reference"],
+        "required": ["bel_statement", "citation"],
         "properties": {
             "bel_statement": {
                 "type": "string",
