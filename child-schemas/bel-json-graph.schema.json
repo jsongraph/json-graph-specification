@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema",
+    "description": "Graph data description. Please note that all field keys are to be lowercase and use snake-case (e.g. words are separated by underscores like ncbi_tax_id). Some of the metadata fields are not required but are included as exemplars for generating interoperable BEL JGF files.  You may need to provide additional validation programmatically to confirm that the metadata you need for your application exists.",
     "oneOf": [{
         "type": "object",
         "properties": {
@@ -15,20 +16,17 @@
             "label": {
                 "type": "string",
                 "title": "Graph Set Label",
-                "description": "Graph Set label",
-                "name": "graph_set_label"
+                "description": "Graph Set label"
             },
             "type": {
                 "type": "string",
                 "title": "Type of Graphs in Set",
-                "description": "Graph types in graph set",
-                "name": "graph_set_type"
+                "description": "Graph types in graph set"
             },
             "metadata": {
                 "type": ["object", "null"],
                 "title": "Graph Set Metadata",
-                "description": "Graph set metadata",
-                "name": "graph_set_metadata"
+                "description": "Graph set metadata"
             },
             "graphs": {
                 "type": "array",
@@ -43,12 +41,12 @@
         "graph": {
             "type": "object",
             "additionalProperties": false,
+            "title": "Graph or Network data",
             "properties": {
                 "label": {
                     "type": "string",
                     "title": "Graph Label",
-                    "description": "Graph label",
-                    "name": "graph_label"
+                    "description": "Graph label"
                 },
                 "directed": {
                     "type": ["boolean", "null"],
@@ -58,8 +56,7 @@
                 "type": {
                     "type": "string",
                     "title": "Type of Graph",
-                    "description": "Graph type",
-                    "name": "graph_type"
+                    "description": "Graph type"
                 },
                 "metadata": {
                     "type": ["object", "null"],
@@ -67,7 +64,7 @@
                     "properties": {
                         "ncbi_tax_id": {
                             "type": "integer",
-                            "title": "NCBI Taxonomy ID - ",
+                            "title": "NCBI Taxonomy ID",
                             "description": "NCBI Taxonomy ID - http://www.ncbi.nlm.nih.gov/taxonomy"
                         },
                         "species_common_name": {
@@ -98,128 +95,122 @@
                                 "type": ["object", "null"],
                                 "additionalProperties": true,
                                 "properties": {
-
-                                    "x": {
-                                        "type": "number",
-                                        "title": "X coordinate",
-                                        "description": "x coordinate of node location"
-                                    },
-                                    "y": {
-                                        "type": "number",
-                                        "title": "Y coordinate",
-                                        "description": "y coordinate of node location"
-                                    },
-                                    "z": {
-                                        "type": "number",
-                                        "title": "Z coordinate",
-                                        "description": "z coordinate of node location - not needed for 2D visualizations"
-                                    }
-                                }
-                            }
-                        },
-                        "required": ["id"]
-                    }
-                },
-                "edges": {
-                    "type": ["array", "null"],
-                    "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "id": {
-                                "type": "string"
-                            },
-                            "source": {
-                                "type": "string",
-                                "title": "Source Node",
-                                "description": "First node in edge triple"
-                            },
-                            "target": {
-                                "type": "string",
-                                "title": "Target Node",
-                                "description": "Second node in edge triple"
-                            },
-                            "relation": {
-                                "type": "string",
-                                "title": "Edge relationship",
-                                "description": "Relationship between nodes in edge - may be directed or undirected"
-                            },
-                            "directed": {
-                                "type": ["boolean", "null"],
-                                "default": true
-                            },
-                            "label": {
-                                "type": "string"
-                            },
-                            "metadata": {
-                                "type": ["object", "null"],
-                                "additionalProperties": true,
-                                "properties": {
-                                    "evidences": {
+                                    "coordinates": {
                                         "type": "array",
                                         "items": {
-                                            "$ref": "#/definitions/evidence"
-                                        }
+                                            "type": "number"
+                                        },
+                                        "minItems": 2,
+                                        "title": "Node coordinates",
+                                        "description": "Node coordinates as either an (x, y) or (x, y, z) tuple"
                                     }
                                 }
                             }
-                        },
-                        "required": ["source", "target"]
-                    }
-                }
-            }
-        },
-        "evidence": {
-            "type": "object",
-            "properties": {
-                "bel_statement": {
-                    "type": "string",
-                    "title": "BEL Statement",
-                    "description": "OpenBEL.org BEL Statement"
-                },
-                "citation": {
-                    "type": "object",
-                    "properties": {
-                        "reference_type": {
-                            "type": "string",
-                            "title": "Reference Type",
-                            "description": "The reference type of this citation."
-                        },
-                        "reference_id": {
-                            "type": "string",
-                            "title": "Reference ID",
-                            "description": "Identifier of the reference, e.g. PubMed ID"
-                        },
-                        "name": {
-                            "type": "string",
-                            "title": "Reference Name",
-                            "description": "Name or citation string for the citation."
                         }
                     },
-                    "title": "Citation for Edge Evidence",
-                    "description": "Reference to support the evidence presented for the Edge"
-                },
-                "biological_context": {
+                    "required": ["id"]
+                }
+            },
+            "edges": {
+                "type": ["array", "null"],
+                "items": {
                     "type": "object",
-                    "additionalProperties": true,
+                    "additionalProperties": false,
                     "properties": {
-                        "ncbi_tax_id": {
-                            "type": "integer",
-                            "title": "NCBI Taxonomy ID",
-                            "description": "NCBI taxonomy id - e.g. 9606 is the id for Homo sapien"
+                        "id": {
+                            "type": "string"
                         },
-                        "species_common_name": {
+                        "source": {
                             "type": "string",
-                            "title": "Species common name",
-                            "description": "Common name for species like human, mouse or rat"
+                            "title": "Source Node",
+                            "description": "First node in edge triple"
+                        },
+                        "target": {
+                            "type": "string",
+                            "title": "Target Node",
+                            "description": "Second node in edge triple"
+                        },
+                        "relation": {
+                            "type": "string",
+                            "title": "Edge relationship",
+                            "description": "Relationship between nodes in edge - may be directed or undirected"
+                        },
+                        "directed": {
+                            "type": ["boolean", "null"],
+                            "default": true
+                        },
+                        "label": {
+                            "type": "string"
+                        },
+                        "metadata": {
+                            "type": ["object", "null"],
+                            "additionalProperties": true,
+                            "properties": {
+                                "evidences": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/evidence"
+                                    }
+                                }
+                            }
                         }
+                    },
+                    "required": ["source", "target"]
+                }
+            }
+        }
+    },
+    "bel_evidence": {
+        "type": "object",
+        "required": ["bel_statement", "reference"],
+        "properties": {
+            "bel_statement": {
+                "type": "string",
+                "title": "BEL Statement",
+                "description": "OpenBEL.org BEL Statement"
+            },
+            "reference": {
+                "type": "object",
+                "properties": {
+                    "reference_type": {
+                        "type": "string",
+                        "title": "Reference Type",
+                        "description": "The reference type of this citation."
+                    },
+                    "reference_id": {
+                        "type": "string",
+                        "title": "Reference ID",
+                        "description": "Identifier of the reference, e.g. PubMed ID"
+                    },
+                    "reference_name": {
+                        "type": "string",
+                        "title": "Reference Name",
+                        "description": "Name or citation string for the reference."
                     }
                 },
-                "summary_text": {
-                    "type": "string",
-                    "title": "Summary Text",
-                    "description": "Abstract from source text to provide support for this evidence"
+                "title": "Reference for Edge Evidence",
+                "description": "Reference to support the evidence presented for the Edge"
+            },
+            "biological_context": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                    "ncbi_tax_id": {
+                        "type": "integer",
+                        "title": "NCBI Taxonomy ID",
+                        "description": "NCBI taxonomy id - e.g. 9606 is the id for Homo sapien"
+                    },
+                    "species_common_name": {
+                        "type": "string",
+                        "title": "Species common name",
+                        "description": "Common name for species like human, mouse or rat"
+                    }
                 }
+            },
+            "summary_text": {
+                "type": "string",
+                "title": "Summary Text",
+                "description": "Abstract from source text to provide support for this evidence"
             }
         }
     }
