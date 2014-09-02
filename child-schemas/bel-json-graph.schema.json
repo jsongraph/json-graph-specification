@@ -1,42 +1,50 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema",
     "description": "Graph data description. Please note that all field keys are to be lowercase and use snake-case (e.g. words are separated by underscores like ncbi_tax_id). Some of the metadata fields are not required but are included as exemplars for generating interoperable BEL JGF files.  You may need to provide additional validation programmatically to confirm that the metadata you need for your application exists.",
-    "oneOf": [{
-        "type": "object",
-        "properties": {
-            "graph": {
-                "$ref": "#/definitions/graph"
-            }
-        },
-        "additionalProperties": false,
-        "required": ["graph"]
-    }, {
-        "type": "object",
-        "properties": {
-            "label": {
-                "type": "string",
-                "title": "Graph Set Label",
-                "description": "Graph Set label"
-            },
-            "type": {
-                "type": "string",
-                "title": "Type of Graphs in Set",
-                "description": "Graph types in graph set"
-            },
-            "metadata": {
-                "type": ["object", "null"],
-                "title": "Graph Set Metadata",
-                "description": "Graph set metadata"
-            },
-            "graphs": {
-                "type": "array",
-                "items": {
+    "oneOf": [
+        {
+            "type": "object",
+            "properties": {
+                "graph": {
                     "$ref": "#/definitions/graph"
                 }
-            }
+            },
+            "additionalProperties": false,
+            "required": [
+                "graph"
+            ]
         },
-        "additionalProperties": false
-    }],
+        {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "title": "Graph Set Label",
+                    "description": "Graph Set label"
+                },
+                "type": {
+                    "type": "string",
+                    "title": "Type of Graphs in Set",
+                    "description": "Graph types in graph set"
+                },
+                "metadata": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "title": "Graph Set Metadata",
+                    "description": "Graph set metadata"
+                },
+                "graphs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/graph"
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    ],
     "definitions": {
         "graph": {
             "type": "object",
@@ -49,7 +57,10 @@
                     "description": "Graph label"
                 },
                 "directed": {
-                    "type": ["boolean", "null"],
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
                     "description": "Directed or undirected graph",
                     "default": true
                 },
@@ -59,7 +70,10 @@
                     "description": "BEL Versioned Graph type"
                 },
                 "metadata": {
-                    "type": ["object", "null"],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "additionalProperties": true,
                     "properties": {
                         "ncbi_tax_id": {
@@ -84,7 +98,10 @@
                     }
                 },
                 "nodes": {
-                    "type": ["array", "null"],
+                    "type": [
+                        "array",
+                        "null"
+                    ],
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
@@ -96,7 +113,10 @@
                                 "type": "string"
                             },
                             "metadata": {
-                                "type": ["object", "null"],
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
                                 "additionalProperties": true,
                                 "properties": {
                                     "coordinate": {
@@ -116,111 +136,134 @@
                             }
                         }
                     },
-                    "required": ["id"]
-                }
-            },
-            "edges": {
-                "type": ["array", "null"],
-                "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                        "source": {
-                            "type": "string",
-                            "title": "Source Node",
-                            "description": "First node in edge triple"
-                        },
-                        "target": {
-                            "type": "string",
-                            "title": "Target Node",
-                            "description": "Second node in edge triple"
-                        },
-                        "relation": {
-                            "type": "string",
-                            "title": "Edge relationship",
-                            "description": "Relationship between nodes in edge - may be directed or undirected"
-                        },
-                        "directed": {
-                            "type": ["boolean", "null"],
-                            "default": true
-                        },
-                        "label": {
-                            "type": "string"
-                        },
-                        "metadata": {
-                            "type": ["object", "null"],
-                            "additionalProperties": true,
-                            "properties": {
-                                "causal": {
-                                    "type": "boolean",
-                                    "description": "True if a BEL causal edge type"
-                                },
-                                "evidences": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/definitions/evidence"
+                    "required": [
+                        "id"
+                    ]
+                },
+                "edges": {
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "source": {
+                                "type": "string",
+                                "title": "Source Node",
+                                "description": "First node in edge triple"
+                            },
+                            "target": {
+                                "type": "string",
+                                "title": "Target Node",
+                                "description": "Second node in edge triple"
+                            },
+                            "relation": {
+                                "type": "string",
+                                "title": "Edge relationship",
+                                "description": "Relationship between nodes in edge - may be directed or undirected"
+                            },
+                            "directed": {
+                                "type": [
+                                    "boolean",
+                                    "null"
+                                ],
+                                "default": true
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "causal": {
+                                        "type": "boolean",
+                                        "description": "True if a BEL causal edge type"
+                                    },
+                                    "evidences": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/evidence"
+                                        }
                                     }
                                 }
                             }
-                        }
-                    },
-                    "required": ["source", "target"]
+                        },
+                        "required": [
+                            "source",
+                            "target"
+                        ]
+                    }
                 }
             }
-        }
-    },
-    "bel_evidence": {
-        "type": "object",
-        "required": ["bel_statement", "citation"],
-        "properties": {
-            "bel_statement": {
-                "type": "string",
-                "title": "BEL Statement",
-                "description": "OpenBEL.org BEL Statement"
-            },
-            "citation": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "oneOf": ["PubMed", "Book", "Journal", "Online Resource", "Other"],
-                        "title": "Citation Type",
-                        "description": "The citation type"
+        },
+        "evidence": {
+            "type": "object",
+            "required": [
+                "bel_statement",
+                "citation"
+            ],
+            "properties": {
+                "bel_statement": {
+                    "type": "string",
+                    "title": "BEL Statement",
+                    "description": "OpenBEL.org BEL Statement"
+                },
+                "citation": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "PubMed",
+                                "Book",
+                                "Journal",
+                                "Online Resource",
+                                "Other"
+                            ],
+                            "title": "Citation Type",
+                            "description": "The citation type"
+                        },
+                        "id": {
+                            "type": "string",
+                            "title": "Citation ID",
+                            "description": "Identifier of the citation, e.g. PubMed ID"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Citation Name",
+                            "description": "Name or citation string for the reference."
+                        }
                     },
-                    "id": {
-                        "type": "string",
-                        "title": "Citation ID",
-                        "description": "Identifier of the citation, e.g. PubMed ID"
-                    },
-                    "name": {
-                        "type": "string",
-                        "title": "Citation Name",
-                        "description": "Name or citation string for the reference."
+                    "title": "Citation for Edge Evidence",
+                    "description": "Citation to support the evidence presented for the Edge"
+                },
+                "biological_context": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                        "ncbi_tax_id": {
+                            "type": "integer",
+                            "title": "NCBI Taxonomy ID",
+                            "description": "NCBI taxonomy id - e.g. 9606 is the id for Homo sapien"
+                        },
+                        "species_common_name": {
+                            "type": "string",
+                            "title": "Species common name",
+                            "description": "Common name for species like human, mouse or rat"
+                        }
                     }
                 },
-                "title": "Citation for Edge Evidence",
-                "description": "Citation to support the evidence presented for the Edge"
-            },
-            "biological_context": {
-                "type": "object",
-                "additionalProperties": true,
-                "properties": {
-                    "ncbi_tax_id": {
-                        "type": "integer",
-                        "title": "NCBI Taxonomy ID",
-                        "description": "NCBI taxonomy id - e.g. 9606 is the id for Homo sapien"
-                    },
-                    "species_common_name": {
-                        "type": "string",
-                        "title": "Species common name",
-                        "description": "Common name for species like human, mouse or rat"
-                    }
+                "summary_text": {
+                    "type": "string",
+                    "title": "Summary Text",
+                    "description": "Abstract from source text to provide support for this evidence"
                 }
-            },
-            "summary_text": {
-                "type": "string",
-                "title": "Summary Text",
-                "description": "Abstract from source text to provide support for this evidence"
             }
         }
     }

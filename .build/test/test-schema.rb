@@ -1,8 +1,9 @@
 require 'json'
 require 'json-schema'
-require "test/unit"
- 
-class SchemaTest < Test::Unit::TestCase
+require "minitest/autorun"
+require "minitest/unit"
+
+class SchemaTest < Minitest::Unit::TestCase
 
   def test_validate_schema
     root = Pathname(File.dirname(File.expand_path __FILE__)) + '..' + '..'
