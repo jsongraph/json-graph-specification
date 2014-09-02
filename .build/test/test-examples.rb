@@ -4,7 +4,7 @@ require 'pathname'
 require 'minitest/autorun'
 require 'minitest/unit'
 
-class ExamplesTest < MiniTest::Unit::TestCase
+class ExamplesTest < Minitest::Test
 
   def setup
     root = Pathname(File.dirname(File.expand_path __FILE__)) + '..' + '..'
