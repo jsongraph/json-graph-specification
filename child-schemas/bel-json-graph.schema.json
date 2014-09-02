@@ -1,73 +1,84 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema",
-    "oneOf": [{
-        "type": "object",
-        "properties": {
-            "graph": {
-                "$ref": "#/definitions/graph"
-            }
-        },
-        "additionalProperties": false,
-        "required": ["graph"]
-    }, {
-        "type": "object",
-        "properties": {
-            "label": {
-                "type": "string",
-                "title": "Graph Set Label",
-                "description": "Graph Set label",
-                "name": "graph_set_label"
-            },
-            "type": {
-                "type": "string",
-                "title": "Type of Graphs in Set",
-                "description": "Graph types in graph set",
-                "name": "graph_set_type"
-            },
-            "metadata": {
-                "type": ["object", "null"],
-                "title": "Graph Set Metadata",
-                "description": "Graph set metadata",
-                "name": "graph_set_metadata"
-            },
-            "graphs": {
-                "type": "array",
-                "items": {
+    "description": "Graph data description. Please note that all field keys are to be lowercase and use snake-case (e.g. words are separated by underscores like ncbi_tax_id). Some of the metadata fields are not required but are included as exemplars for generating interoperable BEL JGF files.  You may need to provide additional validation programmatically to confirm that the metadata you need for your application exists.",
+    "oneOf": [
+        {
+            "type": "object",
+            "properties": {
+                "graph": {
                     "$ref": "#/definitions/graph"
                 }
-            }
+            },
+            "additionalProperties": false,
+            "required": [
+                "graph"
+            ]
         },
-        "additionalProperties": false
-    }],
+        {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "title": "Graph Set Label",
+                    "description": "Graph Set label"
+                },
+                "type": {
+                    "type": "string",
+                    "title": "Type of Graphs in Set",
+                    "description": "Graph types in graph set"
+                },
+                "metadata": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "title": "Graph Set Metadata",
+                    "description": "Graph set metadata"
+                },
+                "graphs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/graph"
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    ],
     "definitions": {
         "graph": {
             "type": "object",
             "additionalProperties": false,
+            "title": "Graph or Network data",
             "properties": {
                 "label": {
                     "type": "string",
                     "title": "Graph Label",
-                    "description": "Graph label",
-                    "name": "graph_label"
+                    "description": "Graph label"
                 },
                 "directed": {
-                    "type": ["boolean", "null"],
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
                     "description": "Directed or undirected graph",
                     "default": true
                 },
                 "type": {
                     "type": "string",
                     "title": "Type of Graph",
-                    "description": "Graph type",
-                    "name": "graph_type"
+                    "description": "BEL Versioned Graph type"
                 },
                 "metadata": {
-                    "type": ["object", "null"],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "additionalProperties": true,
                     "properties": {
                         "ncbi_tax_id": {
                             "type": "integer",
-                            "title": "NCBI Taxonomy ID - ",
+                            "title": "NCBI Taxonomy ID",
                             "description": "NCBI Taxonomy ID - http://www.ncbi.nlm.nih.gov/taxonomy"
                         },
                         "species_common_name": {
@@ -79,11 +90,18 @@
                             "type": "string",
                             "title": "Graph description",
                             "description": "Graph description"
+                        },
+                        "version": {
+                            "type": "string",
+                            "description": "Version of the graph"
                         }
                     }
                 },
                 "nodes": {
-                    "type": ["array", "null"],
+                    "type": [
+                        "array",
+                        "null"
+                    ],
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
@@ -95,40 +113,42 @@
                                 "type": "string"
                             },
                             "metadata": {
-                                "type": ["object", "null"],
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
                                 "additionalProperties": true,
                                 "properties": {
-
-                                    "x": {
-                                        "type": "number",
-                                        "title": "X coordinate",
-                                        "description": "x coordinate of node location"
+                                    "coordinate": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number"
+                                        },
+                                        "minItems": 2,
+                                        "title": "Node coordinates",
+                                        "description": "Node coordinates as either an (x, y) or (x, y, z) tuple, the tuple is unbounded to allow additional dimensions to be used in addition to x, y and z coordinates"
                                     },
-                                    "y": {
-                                        "type": "number",
-                                        "title": "Y coordinate",
-                                        "description": "y coordinate of node location"
-                                    },
-                                    "z": {
-                                        "type": "number",
-                                        "title": "Z coordinate",
-                                        "description": "z coordinate of node location - not needed for 2D visualizations"
+                                    "bel_function_type": {
+                                        "type": "string",
+                                        "description": "BEL function types such as proteinAbundance, trancriptionalActivity, etc"
                                     }
                                 }
                             }
-                        },
-                        "required": ["id"]
-                    }
+                        }
+                    },
+                    "required": [
+                        "id"
+                    ]
                 },
                 "edges": {
-                    "type": ["array", "null"],
+                    "type": [
+                        "array",
+                        "null"
+                    ],
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "id": {
-                                "type": "string"
-                            },
                             "source": {
                                 "type": "string",
                                 "title": "Source Node",
@@ -145,16 +165,26 @@
                                 "description": "Relationship between nodes in edge - may be directed or undirected"
                             },
                             "directed": {
-                                "type": ["boolean", "null"],
+                                "type": [
+                                    "boolean",
+                                    "null"
+                                ],
                                 "default": true
                             },
                             "label": {
                                 "type": "string"
                             },
                             "metadata": {
-                                "type": ["object", "null"],
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
                                 "additionalProperties": true,
                                 "properties": {
+                                    "causal": {
+                                        "type": "boolean",
+                                        "description": "True if a BEL causal edge type"
+                                    },
                                     "evidences": {
                                         "type": "array",
                                         "items": {
@@ -164,13 +194,20 @@
                                 }
                             }
                         },
-                        "required": ["source", "target"]
+                        "required": [
+                            "source",
+                            "target"
+                        ]
                     }
                 }
             }
         },
         "evidence": {
             "type": "object",
+            "required": [
+                "bel_statement",
+                "citation"
+            ],
             "properties": {
                 "bel_statement": {
                     "type": "string",
@@ -180,24 +217,31 @@
                 "citation": {
                     "type": "object",
                     "properties": {
-                        "reference_type": {
+                        "type": {
                             "type": "string",
-                            "title": "Reference Type",
-                            "description": "The reference type of this citation."
+                            "enum": [
+                                "PubMed",
+                                "Book",
+                                "Journal",
+                                "Online Resource",
+                                "Other"
+                            ],
+                            "title": "Citation Type",
+                            "description": "The citation type"
                         },
-                        "reference_id": {
+                        "id": {
                             "type": "string",
-                            "title": "Reference ID",
-                            "description": "Identifier of the reference, e.g. PubMed ID"
+                            "title": "Citation ID",
+                            "description": "Identifier of the citation, e.g. PubMed ID"
                         },
                         "name": {
                             "type": "string",
-                            "title": "Reference Name",
-                            "description": "Name or citation string for the citation."
+                            "title": "Citation Name",
+                            "description": "Name or citation string for the reference."
                         }
                     },
                     "title": "Citation for Edge Evidence",
-                    "description": "Reference to support the evidence presented for the Edge"
+                    "description": "Citation to support the evidence presented for the Edge"
                 },
                 "biological_context": {
                     "type": "object",
