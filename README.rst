@@ -158,7 +158,7 @@ Examples
             "label": "graph label",
             "metadata": {
                 "user-defined": "values"
-            }
+            },
             "nodes": [
                 {
                     "id": "0",
@@ -171,7 +171,7 @@ Examples
                 {
                     "id": "1",
                     "type": "node type",
-                    "label": "node label(1)"
+                    "label": "node label(1)",
                     "metadata": {
                         "user-defined": "values"
                     }
@@ -219,7 +219,7 @@ Examples
                     {
                         "id": "1",
                         "type": "node type",
-                        "label": "node label(1)"
+                        "label": "node label(1)",
                         "metadata": {
                             "user-defined": "values"
                         }
@@ -257,7 +257,7 @@ Examples
                     {
                         "id": "1",
                         "type": "node type",
-                        "label": "node label(1)"
+                        "label": "node label(1)",
                         "metadata": {
                             "user-defined": "values"
                         }
