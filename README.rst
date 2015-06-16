@@ -288,6 +288,25 @@ Schema
 
 The `JSON graph schema`_ (version 3) is provided for the json graph format.
 
+Media Type
+----------
+
+The media type to describe JSON Graph Format is *application/vnd.jgf+json*. The approach to use a media type suffix like *+json* is described by `RFC 6839`_.
+
+In addition to the media type a *profile* media type parameter MUST be set to a URL that dereferences to the JSON schema for JSON Graph Format. The expected usage of the *profile* media type parameter is defined by `RFC 6906`_. For example to communicate plain JSON Graph Format content the *Content-Type* header could be set as:
+
+.. code-block:: http
+
+    Content-Type: application/vnd.jgf+json;
+
+A child schema of JSON Graph Format can communicate its JSON schema using additional *profile* media type parameters. Each *profile* media type parameter MUST dereference a JSON schema. For example the BEL JSON Graph Format could be communicated as:
+
+.. code-block:: http
+
+    Content-Type: application/vnd.jgf+json;
+              profile=http://jsongraphformat.info/schema.json;
+              profile=http://jsongraphformat.info/child-schemas/bel-json-graph.schema.json
+
 Project Tests
 -------------
 
@@ -304,3 +323,5 @@ Links
 .. _JSON schema: http://json-schema.org
 .. _real world examples: https://github.com/jsongraph/json-graph-specification/tree/master/examples
 .. _TESTING: https://github.com/jsongraph/json-graph-specification/blob/master/TESTING.rst
+.. _RFC 6839: https://tools.ietf.org/html/rfc6839
+.. _RFC 6906: https://tools.ietf.org/html/rfc6906
