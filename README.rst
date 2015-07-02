@@ -297,7 +297,7 @@ In addition to the media type a *profile* media type parameter MUST be set to a 
 
 .. code-block:: http
 
-    Content-Type: application/vnd.jgf+json;
+    Content-Type: application/vnd.jgf+json
 
 A child schema of JSON Graph Format can communicate its JSON schema using additional *profile* media type parameters. Each *profile* media type parameter MUST dereference a JSON schema. For example the BEL JSON Graph Format could be communicated as:
 
