@@ -1,0 +1,26 @@
+{
+  "name": "json-graph-specification",
+  "version": "1.0.0",
+  "description": "This JSON Graph Format is focused on capturing basic graph structure in a convenient to use format.",
+  "main": "json-graph-schema.json",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsongraph/json-graph-specification.git"
+  },
+  "keywords": [
+    "json",
+    "graph",
+    "schema",
+    "nodes"
+  ],
+  "bugs": {
+    "url": "https://github.com/jsongraph/json-graph-specification/issues"
+  },
+  "homepage": "https://github.com/jsongraph/json-graph-specification"
+}
