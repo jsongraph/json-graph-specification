@@ -307,6 +307,20 @@ A child schema of JSON Graph Format can communicate its JSON schema using additi
               profile=http://jsongraphformat.info/schema.json;
               profile=http://jsongraphformat.info/child-schemas/bel-json-graph.schema.json
 
+NPM support
+-----------
+
+You can import the schema into your JS projects by installing it via NPM and requiring it.
+
+.. code-block:: shell
+
+    npm install --save json-graph-specification
+
+
+.. code-block:: javascript
+
+    var JSONGraph = require("json-graph-specification");
+
 Project Tests
 -------------
 
