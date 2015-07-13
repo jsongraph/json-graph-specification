@@ -4,18 +4,19 @@
     "oneOf": [
         {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "graph": {
                     "$ref": "#/definitions/graph"
                 }
             },
-            "additionalProperties": false,
             "required": [
                 "graph"
             ]
         },
         {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "label": {
                     "type": "string",
@@ -41,8 +42,7 @@
                         "$ref": "#/definitions/graph"
                     }
                 }
-            },
-            "additionalProperties": false
+            }
         }
     ],
     "definitions": {
@@ -94,6 +94,11 @@
                         "version": {
                             "type": "string",
                             "description": "Version of the graph"
+                        },
+                        "bel_version": {
+                            "type": "string",
+                            "title": "BEL Version",
+                            "description": "The version of BEL (Biological Expression Language) represented in this graph. This version string conforms to the language version as defined by OpenBEL (i.e. 1.0, 2.0, ...)."
                         }
                     }
                 },
@@ -204,6 +209,7 @@
         },
         "evidence": {
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "bel_statement",
                 "citation"
@@ -216,6 +222,7 @@
                 },
                 "citation": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "type": {
                             "type": "string",
@@ -243,8 +250,15 @@
                     "title": "Citation for Edge Evidence",
                     "description": "Citation to support the evidence presented for the Edge"
                 },
-                "biological_context": {
+                "summary_text": {
+                    "type": "string",
+                    "title": "Summary Text",
+                    "description": "Abstract from source text to provide support for this evidence"
+                },
+                "experiment_context": {
                     "type": "object",
+                    "title": "Experiment Context",
+                    "description": "An experiment context specifies the experiment's parameters where this interaction was observed.",
                     "additionalProperties": true,
                     "properties": {
                         "ncbi_tax_id": {
@@ -259,10 +273,14 @@
                         }
                     }
                 },
-                "summary_text": {
-                    "type": "string",
-                    "title": "Summary Text",
-                    "description": "Abstract from source text to provide support for this evidence"
+                "metadata": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "title": "Metadata",
+                    "description": "Metadata for this evidence object. For example this could include application data like reviewer, status, or primary key. If the data is observed within the experiment then it belongs in experiment_context instead.",
+                    "additionalProperties": true
                 }
             }
         }
