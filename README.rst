@@ -1,10 +1,20 @@
 json-graph-specification
 ========================
 
+A proposal for representing graph structures in JSON.
+
+Links
+-----
+
+**Continuous Integration**
+
 .. image:: https://travis-ci.org/jsongraph/json-graph-specification.svg?branch=master
     :target: https://travis-ci.org/jsongraph/json-graph-specification
 
-A proposal for representing graph structures in JSON.
+**Gitter Chat**
+
+.. image:: http://img.shields.io/badge/gitter-join%20chat-brightgreen.svg
+    :target: https://gitter.im/jsongraph
 
 Design principles
 -----------------
