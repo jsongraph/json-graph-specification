@@ -1,2 +1,3 @@
-/.build/.bundle/
-/.build/.gems/
+.bundle
+.gems
+Gemfile.lock

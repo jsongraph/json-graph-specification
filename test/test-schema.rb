@@ -6,7 +6,7 @@ require "minitest/unit"
 class SchemaTest < Minitest::Unit::TestCase
 
   def test_validate_schema
-    root = Pathname(File.dirname(File.expand_path __FILE__)) + '..' + '..'
+    root   = Pathname(File.dirname(File.expand_path __FILE__)) + '..'
     schema = JSON.parse File.read(root + 'json-graph-schema.json')
     errors = JSON::Validator.fully_validate_schema(schema)
 
