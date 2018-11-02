@@ -331,6 +331,11 @@ You can import the schema into your JS projects by installing it via NPM and req
 
     var JSONGraph = require("json-graph-specification");
 
+Clients
+-----------
+1. jay-gee-eff 
+An npm package for manipulating JGF files in nodejs
+
 Project Tests
 -------------
 
