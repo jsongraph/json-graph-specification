@@ -333,7 +333,8 @@ You can import the schema into your JS projects by installing it via NPM and req
 
 Clients
 -----------
-1. jay-gee-eff 
+1. jay-gee-eff - https://www.npmjs.com/package/jay-gee-eff
+
 An npm package for manipulating JGF files in nodejs
 
 Project Tests
