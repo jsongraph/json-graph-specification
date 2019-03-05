@@ -40,7 +40,6 @@ A node object represents a node in a graph.
 
 - An `id` property is a primary key for an object (see Objects_) that is unique for the object type. Its value is defined as a *JSON string* for flexibility.
 - A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
-- A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
 - A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
 
 .. _edge object:
