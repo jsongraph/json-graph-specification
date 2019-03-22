@@ -41,7 +41,7 @@ Before creating bug reports, please check [the open issues](https://github.com/j
 
 #### How Do I Submit A (Good) Bug Report?
 
-Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). 
+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). If at all possible, please provide a [Short, Self Contained, Correct (Compilable), Example](http://sscce.org/).
 
 Explain the problem and include additional details to help maintainers reproduce the problem:
 
