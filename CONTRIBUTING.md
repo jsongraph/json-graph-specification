@@ -70,7 +70,9 @@ Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com
 
 ### Pull Requests
 
-This is the main way how you can contribute to the specification. Feel free to open a pull request for your propsed changes at any time. The requirements described here have several goals:
+This is the main way how you can contribute to the specification. Feel free to open a pull request for your proposed changes at any time. It is advised to open a Github issue in the project first to get feedback from other users/maintainers before opening a pull request. You can then reference that issue in the Pull Request.
+
+The requirements described here have several goals:
 
 - Maintain the quality of json-graph-specification
 - Fix problems that are important to users
