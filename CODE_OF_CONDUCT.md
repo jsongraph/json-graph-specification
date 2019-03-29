@@ -39,6 +39,7 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 Project Team Contacts:
 * william dot s dot hayes at gmail dot com
 * adifabio at biodati dot com
+* abargnesi at gmail dot com
 
 ## Attribution
 
