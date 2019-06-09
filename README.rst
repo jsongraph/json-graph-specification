@@ -332,9 +332,8 @@ You can import the schema into your JS projects by installing it via NPM and req
 
 Clients
 -----------
-1. jay-gee-eff - https://www.npmjs.com/package/jay-gee-eff
-
-An npm package for manipulating JGF files in nodejs
+1. `jay-gee-eff`_ - An npm package for manipulating JGF files in nodejs.
+2. `jay-gee-eff-for-web`_ - An npm package for using JGF graphs with OOP in the web, i.e. web browsers, without capabilities of file handling, but a fully fledged JGF feature set.
 
 Project Tests
 -------------
@@ -354,3 +353,5 @@ Links
 .. _TESTING: https://github.com/jsongraph/json-graph-specification/blob/master/TESTING.rst
 .. _RFC 6839: https://tools.ietf.org/html/rfc6839
 .. _RFC 6906: https://tools.ietf.org/html/rfc6906
+.. _jay-gee-eff: https://www.npmjs.com/package/jay-gee-eff
+.. _jay-gee-eff-for-web: https://www.npmjs.com/package/jay-gee-eff-for-web
