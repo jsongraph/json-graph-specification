@@ -343,6 +343,27 @@ See `TESTING`_.
 
 .. _links:
 
+Related Standards
+-----------------
+
+Graph data in JSON is usually modelled in application-specific ad-hoc
+formats. In addition there are several text-based graph formats:
+
+-  Graph Modelling Language (GML)
+-  DOT (graphviz syntax)
+-  Trivial Graph Format (TGF)
+
+and XML-based graph formats:
+
+-  Directed Graph Markup Language (DGML)
+-  Graph Exchange XML Format (GEXF)
+-  Graph eXchange Language (GXL)
+-  GraphML
+-  DotML (XML representation of DOT)
+-  XGMML (XML representation of GML)
+
+More specific types of graph formats exist for RDF and Graph databases.
+
 Links
 -----
 
