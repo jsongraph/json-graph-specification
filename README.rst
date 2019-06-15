@@ -348,20 +348,29 @@ Related Standards
 Graph data in JSON is usually modelled in application-specific ad-hoc
 formats. In addition there are several text-based graph formats:
 
--  Graph Modelling Language (GML)
--  DOT (graphviz syntax)
+-  `Graph Modelling Language <https://gephi.org/users/supported-graph-formats/gml-format/>`__ (GML)
+-  `DOT <https://en.wikipedia.org/wiki/DOT_(graph_description_language)>`__ (graphviz syntax)
+-  `Pajekt NET format <https://gephi.org/users/supported-graph-formats/pajek-net-format/>`__
+-  `Netdraw VNA format <https://gephi.org/users/supported-graph-formats/netdraw-vna-format/>`__
+-  `UCINET DL Format <https://gephi.org/users/supported-graph-formats/ucinet-dl-format/>`__
 -  Trivial Graph Format (TGF)
+-  `GUESS format <https://gephi.org/users/supported-graph-formats/gdf-format/>`__ (GDF)
+-  `Tulip TLP format <http://tulip.labri.fr/TulipDrupal/?q=tlp-file-format>`__
 
 and XML-based graph formats:
 
 -  Directed Graph Markup Language (DGML)
--  Graph Exchange XML Format (GEXF)
+-  `Graph Exchange XML Format <https://gephi.org/gexf/format>`__ (GEXF)
 -  Graph eXchange Language (GXL)
--  GraphML
+-  `GraphML <http://graphml.graphdrawing.org/>`__
 -  DotML (XML representation of DOT)
 -  XGMML (XML representation of GML)
 
-More specific types of graph formats exist for RDF and Graph databases.
+Several semi-standardized JSON-based graph formats are found in
+applications, for instance
+`Cytoscape JSON <http://js.cytoscape.org/#notation/elements-json>`__.
+Simple graphs can also be expressed `in CSV
+format <https://gephi.org/users/supported-graph-formats/csv-format/>`__.
 
 Links
 -----
