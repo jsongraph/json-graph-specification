@@ -25,9 +25,9 @@ Design principles
 - Properties that allow a ``null`` value can be omitted.
 - Define a `JSON graph schema`_ for content validation purposes.
 
-.. _objects:
+.. _structure:
 
-Objects
+Structure
 -------
 
 .. _node object:
@@ -38,21 +38,21 @@ A node object represents a node in a graph.
 
 **node properties**
 
-- An `id` property is a primary key for an object (see Objects_) that is unique for the object type. Its value is defined as a *JSON string* for flexibility.
+- Each `node` object must contain a string key which is the unique id for the node
 - A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
 - A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
 
-.. _edge object:
+.. _edge array:
 
-**edge object**
+**edge array**
 
-An edge object represents an edge in a graph.
+Edges are an array of objects, each of which represents an edge in the graph.
 
 **edge properties**
 
-- A `source` property provides the `id` value of the source `node object`_. Its value is defined as a *JSON string*.
+- A `source` property references the `key` value of the source `node object`_. Its value is defined as a *JSON string*.
 - A `relation` property provides the interaction between `source` and `target` nodes.  Its value is defined as a *JSON string*.
-- A `target` property provides the `id` value of the target `node object`_. Its value is defined as a *JSON string*.
+- A `target` property references the `key` value of the target `node object`_. Its value is defined as a *JSON string*.
 - A `directed` property provides the edge mode (e.g. directed or undirected). Its value is *JSON true* for directed and *JSON false* for undirected. The edge direction is determined by *graph.directed* property if not present.
 - A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
 
@@ -64,6 +64,7 @@ A graph object represents a single conceptual graph.
 
 **graph properties**
 
+- An optional `id` property provides an identifier for this graph object
 - A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
 - A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
 - A `directed` property provides the graph mode (e.g. directed or undirected). Its value is *JSON true* for directed and *JSON false* for undirected. This property default to *JSON true* indicating a directed graph.
@@ -79,11 +80,6 @@ A graphs object groups zero or more `graph object`_ into one JSON document.
 
 - The `graphs object`_ is defined as a *JSON array*.
 
-**graphs properties**
-
-- A `type` property provides a classification for an object. Its value is defined as a *JSON string*.
-- A `label` property provides a text display for an object. Its value is defined as a *JSON string*.
-- A `metadata` property allows for custom data on an object. Its values is defined as a JSON object.
 
 .. _examples:
 
@@ -118,14 +114,12 @@ Examples
 
     {
         "graph": {
-            "nodes": [
-                {
-                    "id": "A",
+            "nodes": {
+                "A": {
                 },
-                {
-                    "id": "B",
+                "B": {
                 }
-            ]
+            }
         }
     }
 
@@ -137,14 +131,12 @@ Examples
 
     {
         "graph": {
-            "nodes": [
-                {
-                    "id": "A",
+            "nodes": {
+                "A": {
                 },
-                {
-                    "id": "B",
+                "B": {
                 }
-            ],
+            },
             "edges": [
                 {
                     "source": "A",
@@ -168,24 +160,22 @@ Examples
             "metadata": {
                 "user-defined": "values"
             },
-            "nodes": [
-                {
-                    "id": "0",
+            "nodes": {
+                "0": {
                     "type": "node type",
                     "label": "node label(0)",
                     "metadata": {
                         "user-defined": "values"
                     }
                 },
-                {
-                    "id": "1",
+                "1": {
                     "type": "node type",
                     "label": "node label(1)",
                     "metadata": {
                         "user-defined": "values"
                     }
                 }
-            ],
+            },
             "edges": [
                 {
                     "source": "0",
@@ -216,24 +206,22 @@ Examples
                 "metadata": {
                     "user-defined": "values"
                 },
-                "nodes": [
-                    {
-                        "id": "0",
+                "nodes": {
+                    "0": {
                         "type": "node type",
                         "label": "node label(0)",
                         "metadata": {
                             "user-defined": "values"
                         }
                     },
-                    {
-                        "id": "1",
+                    "1": {
                         "type": "node type",
                         "label": "node label(1)",
                         "metadata": {
                             "user-defined": "values"
                         }
                     }
-                ],
+                },
                 "edges": [
                     {
                         "source": "0",
@@ -254,24 +242,22 @@ Examples
                 "metadata": {
                     "user-defined": "values"
                 },
-                "nodes": [
-                    {
-                        "id": "0",
+                "nodes": {
+                    "0": {
                         "type": "node type",
                         "label": "node label(0)",
                         "metadata": {
                             "user-defined": "values"
                         }
                     },
-                    {
-                        "id": "1",
+                    "1": {
                         "type": "node type",
                         "label": "node label(1)",
                         "metadata": {
                             "user-defined": "values"
                         }
                     }
-                ],
+                },
                 "edges": [
                     {
                         "source": "1",
