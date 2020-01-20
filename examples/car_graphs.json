@@ -1,6 +1,7 @@
 {
     "graphs": [
         {
+            "id": "car-manufacturer-relationships",
             "type": "car",
             "label": "Car Manufacturer Relationships",
             "nodes": {
@@ -31,6 +32,7 @@
             ]
         },
         {
+            "id": "car-manufacturer-countries",
             "type": "car",
             "label": "Car Manufacturer Countries",
             "nodes": {

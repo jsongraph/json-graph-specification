@@ -1,5 +1,6 @@
 {
     "graph": {
+        "id": "",
         "type": "schema test",
         "label": "empty test",
         "nodes": {},

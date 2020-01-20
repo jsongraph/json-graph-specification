@@ -1,6 +1,7 @@
 {
     "graph": {
-        "type": "les miserables",
+        "id": "les_miserables",
+        "type": "performance",
         "nodes": {
             "Myriel": {
                 "metadata": {
