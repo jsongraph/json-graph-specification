@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'json'
-gem 'json-schema'
+gem 'json_schemer'
 
 group :test do
   gem 'rake',     '~> 10.3'
