@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://jsongraphformat.info/json-graph-schema.json",
+  "$id": "http://jsongraphformat.info/v2.0/json-graph-schema.json",
   "title": "JSON Graph Schema",
   "oneOf": [
     {
@@ -55,15 +55,17 @@
         },
         "nodes": {
           "type": "object",
-          "properties": {
-            "label": {
-              "type": "string"
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "metadata": {
+                "type": "object"
+              }
             },
-            "metadata": {
-              "type": [
-                "object"
-              ]
-            }
+            "additionalProperties": false
           }
         },
         "edges": {
