@@ -1,5 +1,5 @@
 require 'json'
-require 'json-schema'
+require 'json_schemer'
 require 'pathname'
 require 'minitest/autorun'
 require 'minitest/unit'
@@ -14,15 +14,14 @@ class ExamplesTest < Minitest::Unit::TestCase
 
   def test_examples
     @examples.each do |ex|
+      puts "-------\nExample: #{ex}"
       data = JSON.parse File.open(ex, 'r:UTF-8', &:read)
-      errors = JSON::Validator.fully_validate(@schema, data, :insert_defaults => true)
+      schemer = JSONSchemer.schema(@schema)
+      
+      assert schemer.valid?(data)
+      errors = schemer.validate(data)
+      assert errors.none?
 
-      if ENV['JGS_VERBOSE']
-        puts "\n\nValidated JSON for example: #{ex}"
-        pp data
-      end
-
-      assert errors.empty?, errors.join("\n")
     end
   end
 end

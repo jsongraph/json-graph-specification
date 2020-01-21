@@ -1,69 +1,70 @@
 {
     "graph": {
-        "nodes": [{
-            "metadata": {
-                "yloc": 105,
-                "xloc": 265
-            },
-            "id": "p(HGNC:LTA)",
-            "label": "p(HGNC:LTA)"
-        }, {
-            "metadata": {
-                "yloc": 30,
-                "xloc": 45
-            },
-            "id": "r(HGNC:IFNG)",
-            "label": "r(HGNC:IFNG)"
-        }, {
-            "metadata": {
-                "yloc": 230,
-                "xloc": 165
-            },
-            "id": "bp(GO:\"T-helper 1 type immune response\")",
-            "label": "bp(GO:\"T-helper 1 type immune response\")"
-        }, {
-            "metadata": {
-                "yloc": 30,
-                "xloc": 265
-            },
-            "id": "r(HGNC:LTA)",
-            "label": "r(HGNC:LTA)"
-        }, {
-            "metadata": {
-                "yloc": 30,
-                "xloc": 155
-            },
-            "id": "r(HGNC:IL2)",
-            "label": "r(HGNC:IL2)"
-        }, {
-            "metadata": {
-                "yloc": 30,
-                "xloc": 375
-            },
-            "id": "r(HGNC:LTB)",
-            "label": "r(HGNC:LTB)"
-        }, {
-            "metadata": {
-                "yloc": 105,
-                "xloc": 45
-            },
-            "id": "p(HGNC:IFNG)",
-            "label": "p(HGNC:IFNG)"
-        }, {
-            "metadata": {
-                "yloc": 105,
-                "xloc": 155
-            },
-            "id": "p(HGNC:IL2)",
-            "label": "p(HGNC:IL2)"
-        }, {
-            "metadata": {
-                "yloc": 105,
-                "xloc": 375
-            },
-            "id": "p(HGNC:LTB)",
-            "label": "p(HGNC:LTB)"
-        }],
+        "nodes": {
+            "p(HGNC:LTA)": {
+                "metadata": {
+                    "yloc": 105,
+                    "xloc": 265
+                },
+                "label": "p(HGNC:LTA)"
+            }, 
+            "r(HGNC:IFNG)": {
+                "metadata": {
+                    "yloc": 30,
+                    "xloc": 45
+                },
+                "label": "r(HGNC:IFNG)"
+            }, 
+            "bp(GO:\"T-helper 1 type immune response\")": {
+                "metadata": {
+                    "yloc": 230,
+                    "xloc": 165
+                },
+                "label": "bp(GO:\"T-helper 1 type immune response\")"
+            }, 
+            "r(HGNC:LTA)": {
+                "metadata": {
+                    "yloc": 30,
+                    "xloc": 265
+                },
+                "label": "r(HGNC:LTA)"
+            }, 
+            "r(HGNC:IL2)": {
+                "metadata": {
+                    "yloc": 30,
+                    "xloc": 155
+                },
+                "label": "r(HGNC:IL2)"
+            }, 
+            "r(HGNC:LTB)": {
+                "metadata": {
+                    "yloc": 30,
+                    "xloc": 375
+                },
+                "label": "r(HGNC:LTB)"
+            }, 
+            "p(HGNC:IFNG)": {
+                "metadata": {
+                    "yloc": 105,
+                    "xloc": 45
+                },
+                "label": "p(HGNC:IFNG)"
+            }, 
+            "p(HGNC:IL2)": {
+                "metadata": {
+                    "yloc": 105,
+                    "xloc": 155
+                },
+                "label": "p(HGNC:IL2)"
+            }, 
+            "p(HGNC:LTB)": {
+                "metadata": {
+                    "yloc": 105,
+                    "xloc": 375
+                },
+                "label": "p(HGNC:LTB)"
+            }
+        },
         "edges": [{
             "source": "r(HGNC:IL2)",
             "relation": "translatedTo",

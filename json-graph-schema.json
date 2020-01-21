@@ -1,139 +1,115 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "oneOf": [
-        {
-            "type": "object",
-            "properties": {
-                "graph": {
-                    "$ref": "#/definitions/graph"
-                }
-            },
-            "additionalProperties": false,
-            "required": [
-                "graph"
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://jsongraphformat.info/v2.0/json-graph-schema.json",
+  "title": "JSON Graph Schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "graph": {
+          "$ref": "#/definitions/graph"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "graph"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "graphs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/graph"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
         },
-        {
+        "label": {
+          "type": "string"
+        },
+        "directed": {
+          "type": [
+            "boolean"
+          ],
+          "default": true
+        },
+        "type": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": [
+            "object"
+          ]
+        },
+        "nodes": {
+          "type": "object",
+          "additionalProperties": {
             "type": "object",
             "properties": {
-                "label": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                },
-                "metadata": {
-                    "type": [
-                        "object",
-                        "null"
-                    ]
-                },
-                "graphs": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/graph"
-                    }
-                }
+              "label": {
+                "type": "string"
+              },
+              "metadata": {
+                "type": "object"
+              }
             },
             "additionalProperties": false
-        }
-    ],
-    "definitions": {
-        "graph": {
+          }
+        },
+        "edges": {
+          "type": [
+            "array"
+          ],
+          "items": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "label": {
-                    "type": "string"
-                },
-                "directed": {
-                    "type": [
-                        "boolean",
-                        "null"
-                    ],
-                    "default": true
-                },
-                "type": {
-                    "type": "string"
-                },
-                "metadata": {
-                    "type": [
-                        "object",
-                        "null"
-                    ]
-                },
-                "nodes": {
-                    "type": [
-                        "array",
-                        "null"
-                    ],
-                    "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "id": {
-                                "type": "string"
-                            },
-                            "label": {
-                                "type": "string"
-                            },
-                            "metadata": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "id"
-                        ]
-                    }
-                },
-                "edges": {
-                    "type": [
-                        "array",
-                        "null"
-                    ],
-                    "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "id": {
-                                "type": "string"
-                            },
-                            "source": {
-                                "type": "string"
-                            },
-                            "target": {
-                                "type": "string"
-                            },
-                            "relation": {
-                                "type": "string"
-                            },
-                            "directed": {
-                                "type": [
-                                    "boolean",
-                                    "null"
-                                ],
-                                "default": true
-                            },
-                            "label": {
-                                "type": "string"
-                            },
-                            "metadata": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "source",
-                            "target"
-                        ]
-                    }
-                }
-            }
+              "id": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "relation": {
+                "type": "string"
+              },
+              "directed": {
+                "type": [
+                  "boolean"
+                ],
+                "default": true
+              },
+              "label": {
+                "type": "string"
+              },
+              "metadata": {
+                "type": [
+                  "object"
+                ]
+              }
+            },
+            "required": [
+              "source",
+              "target"
+            ]
+          }
         }
+      }
     }
+  }
 }

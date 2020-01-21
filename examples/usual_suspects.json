@@ -1,24 +1,23 @@
 {
     "graph": {
+        "id": "Usual Suspects",
         "type": "movie characters",
         "label": "Usual Suspects",
-        "nodes": [
-            {
-                "id": "Roger Kint",
+        "nodes": {
+            "Roger Kint": {
                 "label": "Roger Kint",
                 "metadata": {
                     "nickname": "Verbal",
                     "actor": "Kevin Spacey"
                 }
             },
-            {
-                "id": "Keyser Söze",
+            "Keyser Söze": {
                 "label": "Keyser Söze",
                 "metadata": {
                     "actor": "Kevin Spacey"
                 }
             }
-        ],
+        },
         "edges": [
             {
                 "source": "Roger Kint",

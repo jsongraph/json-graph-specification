@@ -1,26 +1,23 @@
 {
     "graphs": [
         {
+            "id": "car-manufacturer-relationships",
             "type": "car",
             "label": "Car Manufacturer Relationships",
-            "nodes": [
-                {
-                    "id": "nissan",
+            "nodes": {
+                "nissan": {
                     "label": "Nissan"
                 },
-                {
-                    "id": "infiniti",
+                "infiniti": {
                     "label": "Infiniti"
                 },
-                {
-                    "id": "toyota",
+                "toyota": {
                     "label": "Toyota"
                 },
-                {
-                    "id": "lexus",
+                "lexus": {
                     "label": "Lexus"
                 }
-            ],
+            },
             "edges": [
                 {
                     "source": "nissan",
@@ -35,22 +32,20 @@
             ]
         },
         {
+            "id": "car-manufacturer-countries",
             "type": "car",
             "label": "Car Manufacturer Countries",
-            "nodes": [
-                {
-                    "id": "japan",
+            "nodes": {
+                "japan": {
                     "label": "Japan"
                 },
-                {
-                    "id": "nissan",
+                "nissan": {
                     "label": "Nissan"
                 },
-                {
-                    "id": "toyota",
+                "toyota": {
                     "label": "Toyota"
                 }
-            ],
+            },
             "edges": [
                 {
                     "source": "nissan",

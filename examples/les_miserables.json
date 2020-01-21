@@ -1,547 +1,471 @@
 {
     "graph": {
-        "type": "les miserables",
-        "nodes": [
-            {
+        "id": "les_miserables",
+        "type": "performance",
+        "nodes": {
+            "Myriel": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Myriel",
                 "label": "Myriel"
             },
-            {
+            "Napoleon": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Napoleon",
                 "label": "Napoleon"
             },
-            {
+            "Mlle.Baptistine": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Mlle.Baptistine",
                 "label": "Mlle.Baptistine"
             },
-            {
+            "Mme.Magloire": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Mme.Magloire",
                 "label": "Mme.Magloire"
             },
-            {
+            "CountessdeLo": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "CountessdeLo",
                 "label": "CountessdeLo"
             },
-            {
+            "Geborand": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Geborand",
                 "label": "Geborand"
             },
-            {
+            "Champtercier": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Champtercier",
                 "label": "Champtercier"
             },
-            {
+            "Cravatte": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Cravatte",
                 "label": "Cravatte"
             },
-            {
+            "Count": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "Count",
                 "label": "Count"
             },
-            {
+            "OldMan": {
                 "metadata": {
                     "group": 1
                 },
-                "id": "OldMan",
                 "label": "OldMan"
             },
-            {
+            "Labarre": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Labarre",
                 "label": "Labarre"
             },
-            {
+            "Valjean": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Valjean",
                 "label": "Valjean"
             },
-            {
+            "Marguerite": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Marguerite",
                 "label": "Marguerite"
             },
-            {
+            "Mme.deR": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Mme.deR",
                 "label": "Mme.deR"
             },
-            {
+            "Isabeau": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Isabeau",
                 "label": "Isabeau"
             },
-            {
+            "Gervais": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Gervais",
                 "label": "Gervais"
             },
-            {
+            "Tholomyes": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Tholomyes",
                 "label": "Tholomyes"
             },
-            {
+            "Listolier": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Listolier",
                 "label": "Listolier"
             },
-            {
+            "Fameuil": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Fameuil",
                 "label": "Fameuil"
             },
-            {
+            "Blacheville": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Blacheville",
                 "label": "Blacheville"
             },
-            {
+            "Favourite": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Favourite",
                 "label": "Favourite"
             },
-            {
+            "Dahlia": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Dahlia",
                 "label": "Dahlia"
             },
-            {
+            "Zephine": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Zephine",
                 "label": "Zephine"
             },
-            {
+            "Fantine": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Fantine",
                 "label": "Fantine"
             },
-            {
+            "Mme.Thenardier": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Mme.Thenardier",
                 "label": "Mme.Thenardier"
             },
-            {
+            "Thenardier": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Thenardier",
                 "label": "Thenardier"
             },
-            {
+            "Cosette": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Cosette",
                 "label": "Cosette"
             },
-            {
+            "Javert": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Javert",
                 "label": "Javert"
             },
-            {
+            "Fauchelevent": {
                 "metadata": {
                     "group": 0
                 },
-                "id": "Fauchelevent",
                 "label": "Fauchelevent"
             },
-            {
+            "Bamatabois": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Bamatabois",
                 "label": "Bamatabois"
             },
-            {
+            "Perpetue": {
                 "metadata": {
                     "group": 3
                 },
-                "id": "Perpetue",
                 "label": "Perpetue"
             },
-            {
+            "Simplice": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Simplice",
                 "label": "Simplice"
             },
-            {
+            "Scaufflaire": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Scaufflaire",
                 "label": "Scaufflaire"
             },
-            {
+            "Woman1": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Woman1",
                 "label": "Woman1"
             },
-            {
+            "Judge": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Judge",
                 "label": "Judge"
             },
-            {
+            "Champmathieu": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Champmathieu",
                 "label": "Champmathieu"
             },
-            {
+            "Brevet": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Brevet",
                 "label": "Brevet"
             },
-            {
+            "Chenildieu": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Chenildieu",
                 "label": "Chenildieu"
             },
-            {
+            "Cochepaille": {
                 "metadata": {
                     "group": 2
                 },
-                "id": "Cochepaille",
                 "label": "Cochepaille"
             },
-            {
+            "Pontmercy": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Pontmercy",
                 "label": "Pontmercy"
             },
-            {
+            "Boulatruelle": {
                 "metadata": {
                     "group": 6
                 },
-                "id": "Boulatruelle",
                 "label": "Boulatruelle"
             },
-            {
+            "Eponine": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Eponine",
                 "label": "Eponine"
             },
-            {
+            "Anzelma": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Anzelma",
                 "label": "Anzelma"
             },
-            {
+            "Woman2": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Woman2",
                 "label": "Woman2"
             },
-            {
+            "MotherInnocent": {
                 "metadata": {
                     "group": 0
                 },
-                "id": "MotherInnocent",
                 "label": "MotherInnocent"
             },
-            {
+            "Gribier": {
                 "metadata": {
                     "group": 0
                 },
-                "id": "Gribier",
                 "label": "Gribier"
             },
-            {
+            "Jondrette": {
                 "metadata": {
                     "group": 7
                 },
-                "id": "Jondrette",
                 "label": "Jondrette"
             },
-            {
+            "Mme.Burgon": {
                 "metadata": {
                     "group": 7
                 },
-                "id": "Mme.Burgon",
                 "label": "Mme.Burgon"
             },
-            {
+            "Gavroche": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Gavroche",
                 "label": "Gavroche"
             },
-            {
+            "Gillenormand": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Gillenormand",
                 "label": "Gillenormand"
             },
-            {
+            "Magnon": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Magnon",
                 "label": "Magnon"
             },
-            {
+            "Mlle.Gillenormand": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Mlle.Gillenormand",
                 "label": "Mlle.Gillenormand"
             },
-            {
+            "Mme.Pontmercy": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Mme.Pontmercy",
                 "label": "Mme.Pontmercy"
             },
-            {
+            "Mlle.Vaubois": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Mlle.Vaubois",
                 "label": "Mlle.Vaubois"
             },
-            {
+            "Lt.Gillenormand": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Lt.Gillenormand",
                 "label": "Lt.Gillenormand"
             },
-            {
+            "Marius": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Marius",
                 "label": "Marius"
             },
-            {
+            "BaronessT": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "BaronessT",
                 "label": "BaronessT"
             },
-            {
+            "Mabeuf": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Mabeuf",
                 "label": "Mabeuf"
             },
-            {
+            "Enjolras": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Enjolras",
                 "label": "Enjolras"
             },
-            {
+            "Combeferre": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Combeferre",
                 "label": "Combeferre"
             },
-            {
+            "Prouvaire": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Prouvaire",
                 "label": "Prouvaire"
             },
-            {
+            "Feuilly": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Feuilly",
                 "label": "Feuilly"
             },
-            {
+            "Courfeyrac": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Courfeyrac",
                 "label": "Courfeyrac"
             },
-            {
+            "Bahorel": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Bahorel",
                 "label": "Bahorel"
             },
-            {
+            "Bossuet": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Bossuet",
                 "label": "Bossuet"
             },
-            {
+            "Joly": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Joly",
                 "label": "Joly"
             },
-            {
+            "Grantaire": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Grantaire",
                 "label": "Grantaire"
             },
-            {
+            "MotherPlutarch": {
                 "metadata": {
                     "group": 9
                 },
-                "id": "MotherPlutarch",
                 "label": "MotherPlutarch"
             },
-            {
+            "Gueulemer": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Gueulemer",
                 "label": "Gueulemer"
             },
-            {
+            "Babet": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Babet",
                 "label": "Babet"
             },
-            {
+            "Claquesous": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Claquesous",
                 "label": "Claquesous"
             },
-            {
+            "Montparnasse": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Montparnasse",
                 "label": "Montparnasse"
             },
-            {
+            "Toussaint": {
                 "metadata": {
                     "group": 5
                 },
-                "id": "Toussaint",
                 "label": "Toussaint"
             },
-            {
+            "Child1": {
                 "metadata": {
                     "group": 10
                 },
-                "id": "Child1",
                 "label": "Child1"
             },
-            {
+            "Child2": {
                 "metadata": {
                     "group": 10
                 },
-                "id": "Child2",
                 "label": "Child2"
             },
-            {
+            "Brujon": {
                 "metadata": {
                     "group": 4
                 },
-                "id": "Brujon",
                 "label": "Brujon"
             },
-            {
+            "Mme.Hucheloup": {
                 "metadata": {
                     "group": 8
                 },
-                "id": "Mme.Hucheloup",
                 "label": "Mme.Hucheloup"
             }
-        ],
+        },
         "edges": [
             {
                 "source": "Napoleon",
