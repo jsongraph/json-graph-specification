@@ -21,13 +21,13 @@ Jan 2020 - Updated to Version 2 by [Travis Giggy](https://github.com/tgig)
 
 ## Structure Overview (Version 2)
 
-### node object
+### nodes object
 
-A node object represents a node in a graph.
+A nodes object/Map represents nodes in a graph. Each key in the nodes object is the unique identifier for the node. The 
+node object is the value the Map key.
 
-### node properties
+### node object properties
 
-- Each _node_ object must contain a string key which is the unique id for the node
 - A _label_ property provides a text display for an object. Its value is defined as a _JSON string_.
 - A _metadata_ property allows for custom data on an object. Its values is defined as a JSON object.
 
@@ -60,8 +60,7 @@ A graph object represents a single conceptual graph.
 - A directed property provides the graph mode (e.g. directed or undirected). Its value is _JSON
   true_ for directed and _JSON false_ for undirected. This property default to _JSON true_
   indicating a directed graph.
-- A nodes property provides the nodes in the graph. Its value is an array of [node object](#node
-  object).
+- A nodes property provides the nodes in the graph. Its value is an Map/Dictionary of node objects - the Map key being the node identifier.
 - An edges property provides the edges in the graph. Its value is an array of edge objects.
 - A metadata property allows for custom data on an object. Its values is defined as a JSON object.
 
@@ -134,16 +133,16 @@ A graphs object groups zero or more graph objects into one JSON document.
     },
     "nodes": {
       "0": {
-        "type": "node type",
         "label": "node label(0)",
         "metadata": {
+          "type": "node type",
           "user-defined": "values"
         }
       },
       "1": {
-        "type": "node type",
         "label": "node label(1)",
         "metadata": {
+          "type": "node type",
           "user-defined": "values"
         }
       }
@@ -178,16 +177,16 @@ A graphs object groups zero or more graph objects into one JSON document.
       },
       "nodes": {
         "0": {
-          "type": "node type",
           "label": "node label(0)",
           "metadata": {
+            "type": "node type",
             "user-defined": "values"
           }
         },
         "1": {
-          "type": "node type",
           "label": "node label(1)",
           "metadata": {
+            "type": "node type",
             "user-defined": "values"
           }
         }
@@ -214,14 +213,12 @@ A graphs object groups zero or more graph objects into one JSON document.
       },
       "nodes": {
         "0": {
-          "type": "node type",
           "label": "node label(0)",
           "metadata": {
             "user-defined": "values"
           }
         },
         "1": {
-          "type": "node type",
           "label": "node label(1)",
           "metadata": {
             "user-defined": "values"
@@ -246,7 +243,7 @@ A graphs object groups zero or more graph objects into one JSON document.
 ```
 
 More
-[real world examples](https://github.com/jsongraph/json-graph-specification/tree/master/examples).
+[real world examples](https://github.com/jsongraph/json-graph-specification/tree/master/examples)
 
 ## Schema
 
