@@ -2,12 +2,13 @@
 
 A proposal for representing graph structures in JSON.
 
-## Links
+## Changes
 
-**Continuous Integration**
-
-[![image](https://travis-ci.org/jsongraph/json-graph-specification.svg?branch=master)](https://travis-ci.org/jsongraph/json-graph-specification)
-
+Jan 2020 - Updated to Version 2 by [Travis Giggy](https://github.com/tgig)
+  - Major change - nodes changed from a Array/List to a Map/Dictionary
+  - Minor changes - updated JSONSchema reference, added the top-level id attribute back
+  - Cleaned up the JSONSchema definitions taking advantage of updates to JSONSchema
+  
 ## Design principles
 
 - Use meaningful property names that reflect the semantic type of the value.
@@ -18,7 +19,7 @@ A proposal for representing graph structures in JSON.
   [JSON graph schema](https://github.com/jsongraph/json-graph-specification/blob/master/json-graph-schema_v2.json)
   for content validation purposes.
 
-## Structure
+## Structure Overview (Version 2)
 
 ### node object
 
