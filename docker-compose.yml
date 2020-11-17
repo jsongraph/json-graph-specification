@@ -1,0 +1,8 @@
+version: '2.4'
+services:
+  python:
+    image: python:3.9.0-alpine3.12
+    command: tail -f /dev/null
+    working_dir: /app
+    volumes:
+      - .:/app
