@@ -16,4 +16,6 @@ jobs:
         with:
           python-version: '3.9.0'
 
-      - run: pip install -r requirements.txt && python -m unittest test/test-examples.py
+      - run: |
+          pip install -r requirements.txt
+          python -m unittest test/test-examples.py
