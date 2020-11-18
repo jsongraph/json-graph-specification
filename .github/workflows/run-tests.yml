@@ -13,7 +13,7 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v2
-          with:
-            python-version: '3.9.0'
+        with:
+          python-version: '3.9.0'
 
       - run: pip install -r requirements.txt && python -m unittest test/test-examples.py
