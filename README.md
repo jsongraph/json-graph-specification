@@ -2,6 +2,8 @@
 
 A proposal for representing graph structures in JSON.
 
+![Run tests](https://github.com/jsongraph/json-graph-specification/workflows/Run%20tests/badge.svg)
+
 ## Changes
 
 Jan 2020 - Updated to Version 2 by [Travis Giggy](https://github.com/tgig)
