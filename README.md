@@ -2,7 +2,7 @@
 
 A proposal for representing graph structures in JSON.
 
-![Run tests](https://github.com/jsongraph/json-graph-specification/workflows/Run%20tests/badge.svg)
+![Run tests](https://github.com/jsongraph/json-graph-specification/workflows/Run%20tests/badge.svg?branch=master)
 
 ## Changes
 
