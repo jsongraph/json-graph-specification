@@ -55,23 +55,20 @@
         },
         "nodes": {
           "type": "object",
-          "additionalProperties": {
-            "type": "object",
-            "properties": {
-              "label": {
-                "type": "string"
-              },
-              "metadata": {
-                "type": "object"
-              }
-            },
-            "additionalProperties": false
-          }
+          "additionalProperties": { "$ref": "#/definitions/node" }
         },
         "edges": {
           "type": [ "array" ],
           "items": { "$ref": "#/definitions/edge" }
         }
+      }
+    },
+    "node": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "metadata": { "type": "object" },
+        "additionalProperties": false
       }
     },
     "edge": {
