@@ -45,6 +45,26 @@
               "items": { "$ref": "#/definitions/edge" }
             }
           }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "label": { "type": "string" },
+            "directed": { "type": [ "boolean" ], "enum": [false] },
+            "type": { "type": "string" },
+            "metadata": { "type": [ "object" ] },
+            "nodes": {
+              "type": "object",
+              "additionalProperties": { "$ref": "#/definitions/node" }
+            },
+            "hyperedges": {
+              "type": [ "array" ],
+              "items": { "$ref": "#/definitions/undirectedhyperedge" }
+            }
+          },
+          "required": [ "directed" ]
         }
       ]
     },
@@ -69,6 +89,18 @@
         "metadata": { "type": [ "object" ] }
       },
       "required": [ "source", "target" ]
+    },
+    "undirectedhyperedge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "nodes": { "type": "array", "items": { "type": "string" } },
+        "relation": { "type": "string" },
+        "label": { "type": "string" },
+        "metadata": { "type": [ "object" ] }
+      },
+      "required": [ "nodes" ]
     }
   }
 }
