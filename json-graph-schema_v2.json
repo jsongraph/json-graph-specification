@@ -26,23 +26,27 @@
   ],
   "definitions": {
     "graph": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": { "type": "string" },
-        "label": { "type": "string" },
-        "directed": { "type": [ "boolean" ], "default": true },
-        "type": { "type": "string" },
-        "metadata": { "type": [ "object" ] },
-        "nodes": {
+      "oneOf": [
+        {
           "type": "object",
-          "additionalProperties": { "$ref": "#/definitions/node" }
-        },
-        "edges": {
-          "type": [ "array" ],
-          "items": { "$ref": "#/definitions/edge" }
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "label": { "type": "string" },
+            "directed": { "type": [ "boolean" ], "default": true },
+            "type": { "type": "string" },
+            "metadata": { "type": [ "object" ] },
+            "nodes": {
+              "type": "object",
+              "additionalProperties": { "$ref": "#/definitions/node" }
+            },
+            "edges": {
+              "type": [ "array" ],
+              "items": { "$ref": "#/definitions/edge" }
+            }
+          }
         }
-      }
+      ]
     },
     "node": {
       "type": "object",
