@@ -69,47 +69,24 @@
           }
         },
         "edges": {
-          "type": [
-            "array"
-          ],
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "source": {
-                "type": "string"
-              },
-              "target": {
-                "type": "string"
-              },
-              "relation": {
-                "type": "string"
-              },
-              "directed": {
-                "type": [
-                  "boolean"
-                ],
-                "default": true
-              },
-              "label": {
-                "type": "string"
-              },
-              "metadata": {
-                "type": [
-                  "object"
-                ]
-              }
-            },
-            "required": [
-              "source",
-              "target"
-            ]
-          }
+          "type": [ "array" ],
+          "items": { "$ref": "#/definitions/edge" }
         }
       }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "source": { "type": "string" },
+        "target": { "type": "string" },
+        "relation": { "type": "string" },
+        "directed": { "type": [ "boolean" ], "default": true },
+        "label": { "type": "string" },
+        "metadata": { "type": [ "object" ] }
+      },
+      "required": [ "source", "target" ]
     }
   }
 }
