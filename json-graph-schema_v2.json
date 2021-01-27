@@ -6,9 +6,7 @@
     {
       "type": "object",
       "properties": {
-        "graph": {
-          "$ref": "#/definitions/graph"
-        }
+        "graph": { "$ref": "#/definitions/graph" }
       },
       "additionalProperties": false,
       "required": [
@@ -20,9 +18,7 @@
       "properties": {
         "graphs": {
           "type": "array",
-          "items": {
-            "$ref": "#/definitions/graph"
-          }
+          "items": { "$ref": "#/definitions/graph" }
         }
       },
       "additionalProperties": false
@@ -33,26 +29,11 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "id": {
-          "type": "string"
-        },
-        "label": {
-          "type": "string"
-        },
-        "directed": {
-          "type": [
-            "boolean"
-          ],
-          "default": true
-        },
-        "type": {
-          "type": "string"
-        },
-        "metadata": {
-          "type": [
-            "object"
-          ]
-        },
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "directed": { "type": [ "boolean" ], "default": true },
+        "type": { "type": "string" },
+        "metadata": { "type": [ "object" ] },
         "nodes": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/node" }
