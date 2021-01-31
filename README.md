@@ -10,9 +10,13 @@ Jan 2020 - Updated to Version 2 by [Travis Giggy](https://github.com/tgig)
   - Major change - nodes changed from a Array/List to a Map/Dictionary
   - Minor changes - updated JSONSchema reference, added the top-level id attribute back
   - Cleaned up the JSONSchema definitions taking advantage of updates to JSONSchema
+
+Jan 2021 - Updated with hypergraph support by [mowhawk2](https://github.com/mohawk2)
+  - Added hyperedges to specification
   
 ## Design principles
 
+- Document graph structure
 - Use meaningful property names that reflect the semantic type of the value.
 - Property names should not be excessively long.
 - Property names should be plural when value is an array.
@@ -30,8 +34,8 @@ node object is the value the Map key.
 
 ### node object properties
 
-- A _label_ property provides a text display for an object. Its value is defined as a _JSON string_.
-- A _metadata_ property allows for custom data on an object. Its values is defined as a JSON object.
+- *label* property provides a text display for an object. Its value is defined as a _JSON string_.
+- *metadata* property allows for custom data on an object. Its values is defined as a JSON object.
 
 ### edge array
 
@@ -39,16 +43,29 @@ Edges are an array of objects, each of which represents an edge in the graph.
 
 ### edge properties
 
-- A source property references the key value of the source [node object](#node object). Its value is
+- *source* property references the key value of the source [node object](#node object). Its value is
   defined as a _JSON string_.
-- A relation property provides the interaction between source and target nodes. Its value is defined
+- *relation* property provides the interaction between source and target nodes. Its value is defined
   as a _JSON string_.
-- A target property references the key value of the target node object. Its value is defined as a
+- *target* property references the key value of the target node object. Its value is defined as a
   _JSON string_.
-- A directed property provides the edge mode (e.g. directed or undirected). Its value is _JSON true_
+- *directed* property provides the edge mode (e.g. directed or undirected). Its value is _JSON true_
   for directed and _JSON false_ for undirected. The edge direction is determined by _graph.directed_
   property if not present.
-- A metadata property allows for custom data on an object. Its values is defined as a JSON object.
+- *metadata* property allows for custom data on an object. Its values is defined as a JSON object.
+
+### hyperedge array
+
+Hyperedges are either undirected - e.g. a set of nodes or directed with a set of source and target nodes
+
+### hyperedge properties
+
+- *nodes* property is an array of key values of nodes from the nodes array
+- *source* property is an array of the key values of the source nodes.
+- *relation* property provides the interaction between source and target nodes. Its value is defined
+  as a _JSON string_.
+- *target* property is an array of the key values of the target nodes.
+- *metadata* property allows for custom data on an object. Its values is defined as a JSON object.
 
 ### graph object
 
@@ -56,15 +73,19 @@ A graph object represents a single conceptual graph.
 
 ### graph properties
 
-- An optional id property provides an identifier for this graph object
-- A type property provides a classification for an object. Its value is defined as a _JSON string_.
-- A label property provides a text display for an object. Its value is defined as a _JSON string_.
-- A directed property provides the graph mode (e.g. directed or undirected). Its value is _JSON
+- *id* (optional) property provides an identifier for this graph object
+- *type* property provides a classification for an object. Its value is defined as a _JSON string_.
+- *label* property provides a text display for an object. Its value is defined as a _JSON string_.
+- *directed* property provides the graph mode (e.g. directed or undirected). Its value is _JSON
   true_ for directed and _JSON false_ for undirected. This property default to _JSON true_
   indicating a directed graph.
-- A nodes property provides the nodes in the graph. Its value is an Map/Dictionary of node objects - the Map key being the node identifier.
-- An edges property provides the edges in the graph. Its value is an array of edge objects.
-- A metadata property allows for custom data on an object. Its values is defined as a JSON object.
+- *nodes* property provides the nodes in the graph. Its value is an Map/Dictionary of node objects - the Map key being the node identifier.
+- *edges* property provides the edges in the graph. Its value is an array of edge objects.
+- *hyperedges* property provides the hyperedges in the graph. Its value is an array of hyperedge objects.
+- *metadata* property allows for custom data on an object. Its values is defined as a JSON object.
+
+Current restriction on having *one of* edges, undirected hyperedges or directed hyperedges. If this is not a useful restriction,
+please post a use case in the Issues.
 
 ### graphs object
 
@@ -74,6 +95,7 @@ A graphs object groups zero or more graph objects into one JSON document.
 
 ## Examples
 
+[Additional examples](https://github.com/jsongraph/json-graph-specification/tree/master/examples)
 ### empty single graph
 
 ```json
@@ -116,6 +138,26 @@ A graphs object groups zero or more graph objects into one JSON document.
       {
         "source": "A",
         "target": "B"
+      }
+    ]
+  }
+}
+```
+
+### hyperedges single graph
+
+```json
+{
+  "graph": {
+    "nodes": {
+      "A": {},
+      "B": {}
+    },
+    "hyperedges": [
+      {
+        "nodes": ["A", "B"],
+        "relation": "associated",
+        "metadata": {}
       }
     ]
   }
@@ -243,9 +285,6 @@ A graphs object groups zero or more graph objects into one JSON document.
   ]
 }
 ```
-
-More
-[real world examples](https://github.com/jsongraph/json-graph-specification/tree/master/examples)
 
 ## Schema
 
