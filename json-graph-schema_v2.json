@@ -1,14 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://jsongraphformat.info/v2.0/json-graph-schema.json",
+  "$id": "http://jsongraphformat.info/v2.1/json-graph-schema.json",
   "title": "JSON Graph Schema",
   "oneOf": [
     {
       "type": "object",
       "properties": {
-        "graph": {
-          "$ref": "#/definitions/graph"
-        }
+        "graph": { "$ref": "#/definitions/graph" }
       },
       "additionalProperties": false,
       "required": [
@@ -20,9 +18,7 @@
       "properties": {
         "graphs": {
           "type": "array",
-          "items": {
-            "$ref": "#/definitions/graph"
-          }
+          "items": { "$ref": "#/definitions/graph" }
         }
       },
       "additionalProperties": false
@@ -30,86 +26,113 @@
   ],
   "definitions": {
     "graph": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "label": { "type": "string" },
+            "directed": { "type": [ "boolean" ], "default": true },
+            "type": { "type": "string" },
+            "metadata": { "type": [ "object" ] },
+            "nodes": {
+              "type": "object",
+              "additionalProperties": { "$ref": "#/definitions/node" }
+            },
+            "edges": {
+              "type": [ "array" ],
+              "items": { "$ref": "#/definitions/edge" }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "label": { "type": "string" },
+            "directed": { "type": [ "boolean" ], "default": true },
+            "type": { "type": "string" },
+            "metadata": { "type": [ "object" ] },
+            "nodes": {
+              "type": "object",
+              "additionalProperties": { "$ref": "#/definitions/node" }
+            },
+            "hyperedges": {
+              "type": [ "array" ],
+              "items": { "$ref": "#/definitions/directedhyperedge" }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "label": { "type": "string" },
+            "directed": { "type": [ "boolean" ], "enum": [false] },
+            "type": { "type": "string" },
+            "metadata": { "type": [ "object" ] },
+            "nodes": {
+              "type": "object",
+              "additionalProperties": { "$ref": "#/definitions/node" }
+            },
+            "hyperedges": {
+              "type": [ "array" ],
+              "items": { "$ref": "#/definitions/undirectedhyperedge" }
+            }
+          },
+          "required": [ "directed" ]
+        }
+      ]
+    },
+    "node": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "metadata": { "type": "object" },
+        "additionalProperties": false
+      }
+    },
+    "edge": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "id": {
-          "type": "string"
-        },
-        "label": {
-          "type": "string"
-        },
-        "directed": {
-          "type": [
-            "boolean"
-          ],
-          "default": true
-        },
-        "type": {
-          "type": "string"
-        },
-        "metadata": {
-          "type": [
-            "object"
-          ]
-        },
-        "nodes": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object",
-            "properties": {
-              "label": {
-                "type": "string"
-              },
-              "metadata": {
-                "type": "object"
-              }
-            },
-            "additionalProperties": false
-          }
-        },
-        "edges": {
-          "type": [
-            "array"
-          ],
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "source": {
-                "type": "string"
-              },
-              "target": {
-                "type": "string"
-              },
-              "relation": {
-                "type": "string"
-              },
-              "directed": {
-                "type": [
-                  "boolean"
-                ],
-                "default": true
-              },
-              "label": {
-                "type": "string"
-              },
-              "metadata": {
-                "type": [
-                  "object"
-                ]
-              }
-            },
-            "required": [
-              "source",
-              "target"
-            ]
-          }
-        }
-      }
+        "id": { "type": "string" },
+        "source": { "type": "string" },
+        "target": { "type": "string" },
+        "relation": { "type": "string" },
+        "directed": { "type": [ "boolean" ], "default": true },
+        "label": { "type": "string" },
+        "metadata": { "type": [ "object" ] }
+      },
+      "required": [ "source", "target" ]
+    },
+    "directedhyperedge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "source": { "type": "array", "items": { "type": "string" } },
+        "target": { "type": "array", "items": { "type": "string" } },
+        "relation": { "type": "string" },
+        "label": { "type": "string" },
+        "metadata": { "type": [ "object" ] }
+      },
+      "required": [ "source", "target" ]
+    },
+    "undirectedhyperedge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "nodes": { "type": "array", "items": { "type": "string" } },
+        "relation": { "type": "string" },
+        "label": { "type": "string" },
+        "metadata": { "type": [ "object" ] }
+      },
+      "required": [ "nodes" ]
     }
   }
 }

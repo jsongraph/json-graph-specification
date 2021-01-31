@@ -1,16 +1,17 @@
 # Testing
 
-Ruby build and tests exist to:
+## Tests exist to:
 
 - validate json graph schema as draft v4 of [JSON schema](http://json-schema.org)
 - validate examples against the json graph schema
 
-How-to
+## How-to
 
-- Install ruby
-- Install bundler with `gem install bundler`
-- Install testing dependencies with `bundle install`
-- Run tests using rake: `bundle exec rake`
+- Install python3
+- Install a virtual environment: `virtualenv venv`
+- Activate virtual environment: `. venv/bin/activate`
+- Install testing etc dependencies with `pip install -r requirements.txt`
+- Run tests: `python -m unittest test.test-examples`
 
 ## Travis-CI
 
