@@ -11,7 +11,7 @@ Jan 2020 - Updated to Version 2 by [Travis Giggy](https://github.com/tgig)
   - Minor changes - updated JSONSchema reference, added the top-level id attribute back
   - Cleaned up the JSONSchema definitions taking advantage of updates to JSONSchema
 
-Jan 2021 - Updated with hypergraph support by [mowhawk2](https://github.com/mohawk2)
+Jan 2021 - Updated with hypergraph support by [mohawk2](https://github.com/mohawk2)
   - Added hyperedges to specification
   
 ## Design principles
@@ -56,7 +56,7 @@ Edges are an array of objects, each of which represents an edge in the graph.
 
 ### hyperedge array
 
-Hyperedges are either undirected - e.g. a set of nodes or directed with a set of source and target nodes
+Hyperedges are either undirected - i.e. a set of nodes - or directed with a set of source nodes, and a set of target nodes
 
 ### hyperedge properties
 
