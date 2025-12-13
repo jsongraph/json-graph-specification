@@ -89,10 +89,10 @@
     },
     "node": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "label": { "type": "string" },
-        "metadata": { "type": "object" },
-        "additionalProperties": false
+        "metadata": { "type": "object" }
       }
     },
     "edge": {
